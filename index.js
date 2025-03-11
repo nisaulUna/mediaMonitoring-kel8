@@ -5,6 +5,9 @@ const db = require('./db.js');
 // Import Routes
 const userRoutes = require('./routes/userRoutes');
 const logActivitiesRoutes = require('./routes/logActivitiesRoutes');
+const projectRoutes = require('./routes/projectRoutes');
+const reportRoutes = require('./routes/reportRoutes');
+const keywordRoutes = require('./routes/keywordRoutes');
 const mediaSourcesRoutes = require('./routes/mediaSourcesRoutes');
 const mediaMentionsRoutes = require('./routes/mediaMentionsRoutes');
 const sentimentAnalysisRoutes = require('./routes/sentimentAnalysisRoutes');
@@ -37,6 +40,9 @@ app.get("/test", (req, res) => {
 // Daftar Routes
 app.use('/users', userRoutes);
 app.use('/log_activities', logActivitiesRoutes);
+app.use('/projects', projectRoutes);
+app.use('/reports', reportRoutes);
+app.use('/keywords', keywordRoutes);
 app.use('/media_sources', mediaSourcesRoutes);
 app.use('/media_mentions', mediaMentionsRoutes);
 app.use('/sentiment_analysis', sentimentAnalysisRoutes);

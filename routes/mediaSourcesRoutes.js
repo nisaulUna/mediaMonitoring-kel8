@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const db = require('../db');
 
-// Get all media sources (Tanpa Promise)
+// Get all media sources
 router.get('/', (req, res) => {
     db.query('SELECT * FROM media_sources', (err, results) => {
         if (err) {

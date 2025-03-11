@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const db = require('../db');
 
-// Get all media mentions (Tanpa Promise)
+// Get all media mentions
 router.get('/', (req, res) => {
     db.query('SELECT * FROM media_mentions', (err, results) => {
         if (err) {
