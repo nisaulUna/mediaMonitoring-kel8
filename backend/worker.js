@@ -65,113 +65,113 @@ async function runWorker() {
                 console.error("Twitter error:", err.message)
             }
             
-            // try {
-            //     // YOUTUBE
-            //     const searchRes = await axios.get("https://www.googleapis.com/youtube/v3/search", {
-            //         params: {
-            //         q: keyword,
-            //         part: "snippet",
-            //         maxResults: 1, // ambil 1 video aja
-            //         type: "video",
-            //         key: process.env.YOUTUBE_API_KEY
-            //         }
-            //     })
+            try {
+                // YOUTUBE
+                const searchRes = await axios.get("https://www.googleapis.com/youtube/v3/search", {
+                    params: {
+                    q: keyword,
+                    part: "snippet",
+                    maxResults: 1, // ambil 1 video aja
+                    type: "video",
+                    key: process.env.YOUTUBE_API_KEY
+                    }
+                })
 
-            //     const video = searchRes.data.items?.[0]
-            //     if (video) {
-            //         const videoId = video.id.videoId
+                const video = searchRes.data.items?.[0]
+                if (video) {
+                    const videoId = video.id.videoId
             
-            //         const commentRes = await axios.get("https://www.googleapis.com/youtube/v3/commentThreads", {
-            //         params: {
-            //             part: "snippet",
-            //             videoId: videoId,
-            //             maxResults: 10,
-            //             key: process.env.YOUTUBE_API_KEY
-            //         }
-            //         })
+                    const commentRes = await axios.get("https://www.googleapis.com/youtube/v3/commentThreads", {
+                    params: {
+                        part: "snippet",
+                        videoId: videoId,
+                        maxResults: 10,
+                        key: process.env.YOUTUBE_API_KEY
+                    }
+                    })
 
-            //         const comments = commentRes.data.items || []
+                    const comments = commentRes.data.items || []
 
-            //         for (const item of comments) {
-            //             const comment = item.snippet.topLevelComment.snippet
+                    for (const item of comments) {
+                        const comment = item.snippet.topLevelComment.snippet
 
-            //             const videoTitle = video.snippet.title
-            //             const content = `${videoTitle}: ${comment.textDisplay}`
+                        const videoTitle = video.snippet.title
+                        const content = `${videoTitle}: ${comment.textDisplay}`
 
-            //             const commentUrl = `https://www.youtube.com/watch?v=${videoId}`
-            //             const [exists] = await db.query("SELECT id FROM media_mentions WHERE url = ? AND content = ?", [
-            //                 commentUrl,
-            //                 content
-            //             ])
-            //             if (exists.length > 0) {
-            //                 console.log(`Komentar YouTube sudah ada: ${comment.textDisplay}`)
-            //                 continue
-            //             }
+                        const commentUrl = `https://www.youtube.com/watch?v=${videoId}`
+                        const [exists] = await db.query("SELECT id FROM media_mentions WHERE url = ? AND content = ?", [
+                            commentUrl,
+                            content
+                        ])
+                        if (exists.length > 0) {
+                            console.log(`Komentar YouTube sudah ada: ${comment.textDisplay}`)
+                            continue
+                        }
 
-            //             await db.query(`
-            //                 INSERT INTO media_mentions (
-            //                     id_keyword, id_mediaSource, content, url,
-            //                     published_date, author, profile_image
-            //                 ) 
-            //                     VALUES (?, ?, ?, ?, ?, ?, ?)`,
-            //                     [
-            //                         keywordId,
-            //                         2, // mediaSource YouTube
-            //                         content,
-            //                         commentUrl,
-            //                         comment.publishedAt,
-            //                         comment.authorDisplayName,
-            //                         comment.authorProfileImageUrl
-            //                     ]
-            //             )
-            //         }
-            //         console.log(`Berhasil proses ${comments.length} comment pada youtube untuk keyword "${keyword}"`)
-            //     }
-            // }catch (err) {
-            //     console.error("YouTube error:", err.message)
-            // }
+                        await db.query(`
+                            INSERT INTO media_mentions (
+                                id_keyword, id_mediaSource, content, url,
+                                published_date, author, profile_image
+                            ) 
+                                VALUES (?, ?, ?, ?, ?, ?, ?)`,
+                                [
+                                    keywordId,
+                                    2, // mediaSource YouTube
+                                    content,
+                                    commentUrl,
+                                    comment.publishedAt,
+                                    comment.authorDisplayName,
+                                    comment.authorProfileImageUrl
+                                ]
+                        )
+                    }
+                    console.log(`Berhasil proses ${comments.length} comment pada youtube untuk keyword "${keyword}"`)
+                }
+            }catch (err) {
+                console.error("YouTube error:", err.message)
+            }
 
-            // try {
-            //     // SERPER.DEV
-            //     const serperRes = await axios.post("https://google.serper.dev/news", {
-            //         q: keyword
-            //     }, {
-            //         headers: {
-            //         "X-API-KEY": process.env.SERPER_API_KEY,
-            //         "Content-Type": "application/json"
-            //         }
-            //     })
+            try {
+                // SERPER.DEV
+                const serperRes = await axios.post("https://google.serper.dev/news", {
+                    q: keyword
+                }, {
+                    headers: {
+                    "X-API-KEY": process.env.SERPER_API_KEY,
+                    "Content-Type": "application/json"
+                    }
+                })
 
-            //     const articles = (serperRes.data.news || []).slice(0, 10)
+                const articles = (serperRes.data.news || []).slice(0, 10)
 
-            //     for (const article of articles) {
+                for (const article of articles) {
                 
-            //         const [exists] = await db.query("SELECT id FROM media_mentions WHERE url = ?", [article.link])
-            //         if (exists.length > 0) {
-            //             console.log(`Artikel sudah ada: ${article.link}`)
-            //             continue
-            //         }
+                    const [exists] = await db.query("SELECT id FROM media_mentions WHERE url = ?", [article.link])
+                    if (exists.length > 0) {
+                        console.log(`Artikel sudah ada: ${article.link}`)
+                        continue
+                    }
                 
-            //         await db.query(`
-            //             INSERT INTO media_mentions (
-            //                 id_keyword, id_mediaSource, content, url,
-            //                 published_date, author, profile_image
-            //             ) VALUES (?, ?, ?, ?, ?, ?, ?)`, 
-            //              [
-            //                 keywordId,
-            //                 3,
-            //                 article.snippet || article.title,
-            //                 article.link,
-            //                 article.date,
-            //                 article.source || 'unknown',
-            //                 null
-            //             ]
-            //         )
-            //     }                
-            //     console.log(`Berhasil serper ${articles.length} artikel (Kompas & Medium) "${keyword}"`)   
-            // }catch (err) {
-            //     console.error("Serper error:", err.message)
-            // }
+                    await db.query(`
+                        INSERT INTO media_mentions (
+                            id_keyword, id_mediaSource, content, url,
+                            published_date, author, profile_image
+                        ) VALUES (?, ?, ?, ?, ?, ?, ?)`, 
+                         [
+                            keywordId,
+                            3,
+                            article.snippet || article.title,
+                            article.link,
+                            article.date,
+                            article.source || 'unknown',
+                            null
+                        ]
+                    )
+                }                
+                console.log(`Berhasil serper ${articles.length} artikel (Kompas & Medium) "${keyword}"`)   
+            }catch (err) {
+                console.error("Serper error:", err.message)
+            }
         } catch (err) {
         console.error("Worker error:", err.message)
         }
@@ -187,4 +187,4 @@ setInterval(async () => {
     } catch (err) {
       console.error(" Gagal hit sentimen API:", err.message)
     }
-  }, 30000) // per hari
+  }, 30000) // per hari (setengah menit)
