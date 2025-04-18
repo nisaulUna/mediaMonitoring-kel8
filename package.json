@@ -4,7 +4,9 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon backend/app.js"
+    "dev": "nodemon backend/app.js",
+    "worker:mention": "node backend/worker/mentionFetchWorker.js",
+    "worker:delete": "node backend/worker/deleteProjectWorker.js"
   },
   "keywords": [],
   "author": "",

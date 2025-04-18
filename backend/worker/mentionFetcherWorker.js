@@ -1,7 +1,6 @@
 require("dotenv").config()
-const axios = require("axios")
 const { db, redis } = require("../config")
-const franc = require('franc')
+const axios = require("axios")
 
 async function runWorker() {
 
