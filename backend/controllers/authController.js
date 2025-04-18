@@ -6,7 +6,7 @@ const { db } = require('../config');
 // Membuat rate limiter untuk login dan register
 const limiter = rateLimit({
     windowMs: 15 * 60 * 1000, // 15 menit
-    max: 5, // maksimal 5 permintaan per IP dalam waktu 15 menit
+    max: 20, // maksimal 5 permintaan per IP dalam waktu 15 menit
     message: 'Too many requests, please try again later.'
 });
 

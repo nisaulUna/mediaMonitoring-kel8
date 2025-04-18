@@ -7,10 +7,12 @@ const PORT = 3000
 app.use(express.json())
 
 // Routing
-const mainPageRoute = require("./routes/mainPageRoute")
 const authRoutes = require('./routes/authRoutes');
-app.use("/", mainPageRoute) 
+const projectRoute = require("./routes/projectRoute");
+const sentimentRoute = require('./routes/sentimentRoute');
 app.use('/auth', authRoutes);
+app.use("/search", projectRoute) 
+app.use("/sentiment", sentimentRoute) 
 
 // Server
 app.listen(PORT, () => {
