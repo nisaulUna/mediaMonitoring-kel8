@@ -1,4 +1,5 @@
 const { db, redis } = require("../config")
+const moment = require('moment')
 
 // Membuat project
 exports.createProject = async (req, res) => {
@@ -11,7 +12,21 @@ exports.createProject = async (req, res) => {
     return res.status(400).json({ error: "Nama project dan keyword wajib diisi!" })
   }
 
+  const today = moment().format('YYYY-MM-DD')
+  const throttleKey = `create_project:${userId}:${today}`
+
   try {
+    // Throttling
+    const currentCount = await redis.incr(throttleKey)
+
+    if (currentCount === 1) {
+      await redis.expire(throttleKey, 86400) // TTL 1 hari = 86400 detik
+    }
+
+    if (currentCount > 3) {
+      return res.status(429).json({ error: "Maksimal 3 project per hari per user" })
+    }
+
     const [projectRows] = await db.query(
       "SELECT id FROM projects WHERE project_name = ? AND is_active = 1", [project]
     )
