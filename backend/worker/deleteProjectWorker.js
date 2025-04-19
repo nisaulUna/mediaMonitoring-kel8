@@ -1,5 +1,16 @@
 const { redis, db } = require("../config")
 const moment = require("moment")
+const fs = require("fs")
+const path = require("path")
+const logPath = path.join(__dirname, "../logs/deleteProjectWorker.log")
+
+function logToFile(message) {
+  const timestamp = new Date().toISOString()
+  const finalMessage = `[${timestamp}] ${message}\n`
+  fs.appendFile(logPath, finalMessage, err => {
+    if (err) console.error("Gagal menulis ke file log:", err)
+  })
+}
 
 async function deleteExpiredProjects() {
   const keys = await redis.keys("delete_project:*")
@@ -28,7 +39,21 @@ async function deleteExpiredProjects() {
 
       if (diffDays === 6) {
         const deleteTime = deletedAt.clone().add(7, "days").local().format("dddd, D MMMM YYYY [pukul] HH:mm")
-        console.log(`Reminder: Project '${project_name}' akan dihapus besok (${deleteTime}). Segera restore jika ingin menyelamatkan.`)
+        const reminderMessage = `Reminder: Project '${project_name}' akan dihapus besok (${deleteTime}). Segera restore jika ingin menyelamatkan.`
+
+        await redis.setex(
+          `reminder:${project_name}:${userId}`,
+          86400, // 1 hari
+          JSON.stringify({
+            project_name,
+            userId,
+            message: reminderMessage,
+            delete_at: deleteTime
+          })
+        )
+
+        logToFile(`Reminder: Project '${project_name}' akan dihapus besok (${deleteTime})`)
+
       } else if (diffDays >= 7) {
         const projectId = project.id
         const keywordId = project.id_keyword
@@ -52,25 +77,28 @@ async function deleteExpiredProjects() {
           await db.query(`DELETE FROM media_mentions WHERE id_keyword = ?`, [keywordId])
           await db.query(`DELETE FROM keywords WHERE id = ?`, [keywordId])
 
-          console.log(`🧹 Keyword ID ${keywordId} dihapus karena tidak dipakai project lain.`)
+          logToFile(`Keyword ID ${keywordId} dihapus karena tidak dipakai project lain.`)
         }
 
-        await redis.del(key)
-        console.log(`Project '${project_name}' milik user ${userId} dihapus permanen setelah 7 hari.`)
+        const deleted = await redis.del(key)
+        if (!deleted) logToFile(`Redis key '${key}' gagal dihapus.`)
+
+        logToFile(`Project '${project_name}' milik user ${userId} dihapus permanen setelah 7 hari.`)
+
       } else {
-        console.log(`Project '${project_name}' masih dalam masa tunggu (${diffDays} hari).`)
+        logToFile(`Project '${project_name}' masih dalam masa tunggu (${diffDays} hari).`)
       }
 
     } catch (err) {
-      console.error("Gagal hapus project permanen:", err)
+      logToFile(`Gagal hapus project permanen: ${err.message}`)
     }
   }
 }
 
 deleteExpiredProjects()
   .then(() => {
-    console.log("Worker dijalankan manual.")
+    logToFile("Worker selesai dijalankan.")
   })
   .catch(err => {
-    console.error("Error saat menjalankan worker:", err)
+    logToFile(`Worker gagal dijalankan: ${err.message}`)
   })
