@@ -125,7 +125,7 @@ exports.softDeleteProject = async (req, res) => {
 exports.getTodayHotSearches = async (req, res) => {
   const today = new Date().toISOString().slice(0, 10)
   try {
-    const data = await redis.zrevrange(daily_search:${today}, 0, 4, "WITHSCORES")
+    const data = await redis.zrevrange(`daily_search:${today}`, 0, 4, "WITHSCORES")
     res.json({ top_searches: data })
   } catch (err) {
     res.status(500).json({ error: "Gagal ambil pencarian terpopuler" })
@@ -150,7 +150,7 @@ exports.getRedisDashboard = async (req, res) => {
 exports.getUserActivity = async (req, res) => {
   const userId = req.params.userId
   try {
-    const activities = await redis.lrange(user_activity:${userId}, 0, 9)
+    const activities = await redis.lrange(`user_activity:${userId}`, 0, 9)
     res.json({ activities })
   } catch (err) {
     res.status(500).json({ error: "Gagal mengambil aktivitas user" })

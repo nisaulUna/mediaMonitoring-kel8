@@ -15,10 +15,6 @@ app.use('/auth', authRoutes);
 app.use("/search", projectRoute) 
 app.use("/sentiment", sentimentRoute) 
 app.use("/cache", redisRoute) 
-const mainPageRoute = require("./routes/mainPageRoute")
-const authRoutes = require('./routes/authRoutes');
-app.use("/", mainPageRoute) 
-app.use('/auth', authRoutes);
 
 // Server
 app.listen(PORT, () => {
