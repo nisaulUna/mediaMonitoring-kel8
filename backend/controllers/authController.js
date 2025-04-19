@@ -20,7 +20,7 @@ const ACTION_TYPES = {
     FAILED_LOGIN: 'failed_login'
 };
 
-// Helper log activity (update nama tabel jadi log_activities)
+// Helper log activity
 async function logActivity(userId, actionType, req, extraData = {}) {
     try {
         const actionDetails = JSON.stringify({
