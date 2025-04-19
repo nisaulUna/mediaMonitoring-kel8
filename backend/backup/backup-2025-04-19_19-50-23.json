@@ -1,0 +1,1415 @@
+{
+  "timestamp": "2025-04-19_19-50-23",
+  "projects": [
+    {
+      "id": 1,
+      "id_user": 1,
+      "id_keyword": 1,
+      "project_name": "project adidas",
+      "is_active": 1,
+      "createdAt": "2025-04-17T15:40:21.000Z",
+      "deletedAt": null
+    },
+    {
+      "id": 2,
+      "id_user": 1,
+      "id_keyword": 2,
+      "project_name": "project wardah",
+      "is_active": 1,
+      "createdAt": "2025-04-17T15:40:39.000Z",
+      "deletedAt": null
+    },
+    {
+      "id": 3,
+      "id_user": 1,
+      "id_keyword": 2,
+      "project_name": "project wardah2",
+      "is_active": 1,
+      "createdAt": "2025-04-17T15:41:14.000Z",
+      "deletedAt": null
+    },
+    {
+      "id": 4,
+      "id_user": 1,
+      "id_keyword": 3,
+      "project_name": "project samsung",
+      "is_active": 1,
+      "createdAt": "2025-04-17T15:55:26.000Z",
+      "deletedAt": null
+    }
+  ],
+  "keywords": [
+    {
+      "id": 1,
+      "keyword": "adidas",
+      "is_active": 1,
+      "createdAt": "2025-04-17T15:40:21.000Z"
+    },
+    {
+      "id": 2,
+      "keyword": "wardah",
+      "is_active": 1,
+      "createdAt": "2025-04-17T15:40:39.000Z"
+    },
+    {
+      "id": 3,
+      "keyword": "samsung",
+      "is_active": 1,
+      "createdAt": "2025-04-17T15:55:26.000Z"
+    }
+  ],
+  "mentions": [
+    {
+      "id": 1,
+      "id_keyword": 1,
+      "id_mediaSource": 1,
+      "content": "RT @KingKfeet: Light recovery run this morning, sockless, in my adidas. Have to leave the shoes outside because they smell 😅\n\n#footfetish #…",
+      "url": "https://twitter.com/i/web/status/1912896339895005597",
+      "published_date": "2025-04-17T08:50:01.000Z",
+      "author": "ShrunkenChris",
+      "profile_image": "https://pbs.twimg.com/profile_images/1903949779207421953/FWAv3IFU_normal.png"
+    },
+    {
+      "id": 2,
+      "id_keyword": 1,
+      "id_mediaSource": 1,
+      "content": "RT @Im_GuguN: Biggest Ogle working with Adidas? 🥳🥳🔥🔥🔥\n\nAshley Ogle x Adidas ZA 🥳\nASHLEY CHILD OF GRACE \nASHLEY OGLE IS BLESSED\n#AshleyOgle…",
+      "url": "https://twitter.com/i/web/status/1912896337575559454",
+      "published_date": "2025-04-17T08:50:01.000Z",
+      "author": "JenniferNwank",
+      "profile_image": "https://pbs.twimg.com/profile_images/1905298246638931968/zZUjx6Jv_normal.jpg"
+    },
+    {
+      "id": 3,
+      "id_keyword": 1,
+      "id_mediaSource": 1,
+      "content": "RT @FlyGirl5959: Ashley in a United kit🔥🔥🔥...GGMU for life🛑.....\n\nAshley X Adidas 💃\n\nASHLEY CHILD OF GRACE\nASHLEY OGLE IS BLESSED\n#AshleyOg…",
+      "url": "https://twitter.com/i/web/status/1912896335985910209",
+      "published_date": "2025-04-17T08:50:01.000Z",
+      "author": "Good_n3ss",
+      "profile_image": "https://pbs.twimg.com/profile_images/1884980912246386689/THqdoTpe_normal.jpg"
+    },
+    {
+      "id": 4,
+      "id_keyword": 1,
+      "id_mediaSource": 1,
+      "content": "RT @SneakerNews: adidas Harden Vol. 9 \"Ice Metallic\" 🥶 🏀\n🚨 OFFICIAL IMAGES 🚨\n🗓️ May 10th, 2025\n💰 $160 https://t.co/YHKYRX0uuv",
+      "url": "https://twitter.com/i/web/status/1912896334991892932",
+      "published_date": "2025-04-17T08:50:00.000Z",
+      "author": "HennyHardaway96",
+      "profile_image": "https://pbs.twimg.com/profile_images/1905409032354992128/5_L6Fgq-_normal.jpg"
+    },
+    {
+      "id": 5,
+      "id_keyword": 1,
+      "id_mediaSource": 1,
+      "content": "RT @GoodletB43638: Ashley’s and Adidas 🔥🤝.Go check out this reel on her IG 😍\n\nASHLEY CHILD OF GRACE \nASHLEY OGLE IS BLESSED\n#AshleyOgle \n#A…",
+      "url": "https://twitter.com/i/web/status/1912896321310109832",
+      "published_date": "2025-04-17T08:49:57.000Z",
+      "author": "wumiblessing7",
+      "profile_image": "https://pbs.twimg.com/profile_images/1514292569286529024/3xfN5JVJ_normal.png"
+    },
+    {
+      "id": 6,
+      "id_keyword": 1,
+      "id_mediaSource": 1,
+      "content": "RT @FutureStacked: This is the youngest billionaire you’ve never heard of...\n\nHe was a pizza delivery boy who built Gymshark into a $1.3B c…",
+      "url": "https://twitter.com/i/web/status/1912896311524995122",
+      "published_date": "2025-04-17T08:49:55.000Z",
+      "author": "1FlowState",
+      "profile_image": "https://pbs.twimg.com/profile_images/1815992897516470272/Qw5RneCO_normal.jpg"
+    },
+    {
+      "id": 7,
+      "id_keyword": 1,
+      "id_mediaSource": 1,
+      "content": "RT @FuadCadani: Adidas have had their foot on Nike’s neck for over 12months now… please enough of the T90 astros with jeans and WAKE TF UP!",
+      "url": "https://twitter.com/i/web/status/1912896306416177225",
+      "published_date": "2025-04-17T08:49:54.000Z",
+      "author": "MoWelkin",
+      "profile_image": "https://pbs.twimg.com/profile_images/1818341682686939136/ZppD0p7N_normal.jpg"
+    },
+    {
+      "id": 8,
+      "id_keyword": 1,
+      "id_mediaSource": 1,
+      "content": "RT @Somhiseremfcb: Agente de Adidas: \"Bienvenido a Champions Travel. ¿Adónde te gustaría ir?\"\n\nLamine Yamal: \"Milán, por favor.\" https://t.…",
+      "url": "https://twitter.com/i/web/status/1912896301726921097",
+      "published_date": "2025-04-17T08:49:52.000Z",
+      "author": "futboleste",
+      "profile_image": "https://pbs.twimg.com/profile_images/1912331141169758208/lbgViyvL_normal.jpg"
+    },
+    {
+      "id": 9,
+      "id_keyword": 1,
+      "id_mediaSource": 1,
+      "content": "Ashley ogle X Adidas \n#Ashleyogle\n#Adidas\n\nGet innnnnn!!! https://t.co/mhgI9ZdcPm",
+      "url": "https://twitter.com/i/web/status/1912896300913250334",
+      "published_date": "2025-04-17T08:49:52.000Z",
+      "author": "bestofphalo",
+      "profile_image": "https://pbs.twimg.com/profile_images/1758668722351300608/NhO15iXR_normal.jpg"
+    },
+    {
+      "id": 10,
+      "id_keyword": 1,
+      "id_mediaSource": 1,
+      "content": "RT @BarcaUniversal: Adidas agent: \"Welcome to champions travel. Where would you like to go?\"\n\nLamine Yamal: \"Milan please.\" https://t.co/j7…",
+      "url": "https://twitter.com/i/web/status/1912896290175979744",
+      "published_date": "2025-04-17T08:49:50.000Z",
+      "author": "thapajustin1",
+      "profile_image": "https://pbs.twimg.com/profile_images/1872297267069358080/11pl_q0g_normal.jpg"
+    },
+    {
+      "id": 11,
+      "id_keyword": 1,
+      "id_mediaSource": 2,
+      "content": "Top 5 MUST HAVE Adidas Sneakers 🔥: Did people forget about addias superstar?",
+      "url": "https://www.youtube.com/watch?v=adbZsDLff3I",
+      "published_date": "2025-04-14T21:44:31.000Z",
+      "author": "@aajjajaajajajajja-k6e",
+      "profile_image": "https://yt3.ggpht.com/ytc/AIdro_lVwICIdXFa1ZqPnlJnTv4SFfuRU1A_AODteTbyCBrRW5xHRe5Uim_mgvN8Z2GT4g_3fA=s48-c-k-c0x00ffffff-no-rj"
+    },
+    {
+      "id": 12,
+      "id_keyword": 1,
+      "id_mediaSource": 2,
+      "content": "Top 5 MUST HAVE Adidas Sneakers 🔥: Wow nice",
+      "url": "https://www.youtube.com/watch?v=adbZsDLff3I",
+      "published_date": "2025-04-14T11:04:03.000Z",
+      "author": "@Miracleshoes-t4x",
+      "profile_image": "https://yt3.ggpht.com/ytc/AIdro_m5evfCF_YxC_lDCZai6PdDPi8RLB_PVhrL3a1ARTLFBM2x9-KClsWFWW2FfUzwIrVBkQ=s48-c-k-c0x00ffffff-no-rj"
+    },
+    {
+      "id": 13,
+      "id_keyword": 1,
+      "id_mediaSource": 2,
+      "content": "Top 5 MUST HAVE Adidas Sneakers 🔥: samba is so boring and ugly. I don‘t get the hype",
+      "url": "https://www.youtube.com/watch?v=adbZsDLff3I",
+      "published_date": "2025-04-12T04:24:27.000Z",
+      "author": "@mrqs83",
+      "profile_image": "https://yt3.ggpht.com/ytc/AIdro_nKWIczk1o26r8lgnkq_sGpeJkAaCThWoUQQHXqTGA=s48-c-k-c0x00ffffff-no-rj"
+    },
+    {
+      "id": 14,
+      "id_keyword": 1,
+      "id_mediaSource": 2,
+      "content": "Top 5 MUST HAVE Adidas Sneakers 🔥: I have the white sambasa and love them. No issues with them.",
+      "url": "https://www.youtube.com/watch?v=adbZsDLff3I",
+      "published_date": "2025-04-12T03:56:30.000Z",
+      "author": "@moni1952",
+      "profile_image": "https://yt3.ggpht.com/ytc/AIdro_lks7HXNRgUTB2ngin3fc_yFQ82-k23iW2EPwaGgkY=s48-c-k-c0x00ffffff-no-rj"
+    },
+    {
+      "id": 15,
+      "id_keyword": 1,
+      "id_mediaSource": 2,
+      "content": "Top 5 MUST HAVE Adidas Sneakers 🔥: Definitely never been a Stan smith, samba fan. Not following the trend and hype..",
+      "url": "https://www.youtube.com/watch?v=adbZsDLff3I",
+      "published_date": "2025-04-09T18:57:10.000Z",
+      "author": "@priscillacarrillo4259",
+      "profile_image": "https://yt3.ggpht.com/ytc/AIdro_kZwIKmrpqZbBDzdKd3vQzjsMgnvHM3102MQxdoNf_P9vA=s48-c-k-c0x00ffffff-no-rj"
+    },
+    {
+      "id": 16,
+      "id_keyword": 1,
+      "id_mediaSource": 2,
+      "content": "Top 5 MUST HAVE Adidas Sneakers 🔥: Man the samba is the most uncomfortable shoe on the planet",
+      "url": "https://www.youtube.com/watch?v=adbZsDLff3I",
+      "published_date": "2025-04-04T10:27:04.000Z",
+      "author": "@BenTaylor-hq6cg",
+      "profile_image": "https://yt3.ggpht.com/ytc/AIdro_nYQvAmUyrYtkF2soc7ppz6IxaER9_xGSrVZLHiG4eUGMeY1Tl-U5nqn34h_UtOew4GdA=s48-c-k-c0x00ffffff-no-rj"
+    },
+    {
+      "id": 17,
+      "id_keyword": 1,
+      "id_mediaSource": 2,
+      "content": "Top 5 MUST HAVE Adidas Sneakers 🔥: Stan Smiths are so trash I don’t get the hype",
+      "url": "https://www.youtube.com/watch?v=adbZsDLff3I",
+      "published_date": "2025-04-03T15:01:38.000Z",
+      "author": "@About_a_Bag",
+      "profile_image": "https://yt3.ggpht.com/4ayCCdtDzuz2iq1OpMsAsXsU1cj3354O1NKns9nIScIHJj9l6HZd10ut7F6xSgvnHDGELvi2Ag=s48-c-k-c0x00ffffff-no-rj"
+    },
+    {
+      "id": 18,
+      "id_keyword": 1,
+      "id_mediaSource": 2,
+      "content": "Top 5 MUST HAVE Adidas Sneakers 🔥: The AE1&#39;s are just a Yeezy rip off. Stole his designs.",
+      "url": "https://www.youtube.com/watch?v=adbZsDLff3I",
+      "published_date": "2025-04-02T15:10:53.000Z",
+      "author": "@Jimmy-es8bc",
+      "profile_image": "https://yt3.ggpht.com/ytc/AIdro_mqS2ojm7zY776HBwNXBXtdd3l_AO6DonPXU7uj6WjhzRZh=s48-c-k-c0x00ffffff-no-rj"
+    },
+    {
+      "id": 19,
+      "id_keyword": 1,
+      "id_mediaSource": 2,
+      "content": "Top 5 MUST HAVE Adidas Sneakers 🔥: Where are the &quot;Spezials?&quot;",
+      "url": "https://www.youtube.com/watch?v=adbZsDLff3I",
+      "published_date": "2025-04-02T13:12:26.000Z",
+      "author": "@richross4781",
+      "profile_image": "https://yt3.ggpht.com/8WOqEUN20oO_qJ7Bb2ZhPewF-jKFnOlzuOLJINmOdrSn9eUkVC6pLPt-ffdNvAJ39-1Q0H1TvWQ=s48-c-k-c0x00ffffff-no-rj"
+    },
+    {
+      "id": 20,
+      "id_keyword": 1,
+      "id_mediaSource": 2,
+      "content": "Top 5 MUST HAVE Adidas Sneakers 🔥: Samba, Gazelle, Stan Smith, Spezial and SuperStar are lit. Not so much the Campus tho.",
+      "url": "https://www.youtube.com/watch?v=adbZsDLff3I",
+      "published_date": "2025-04-02T06:47:54.000Z",
+      "author": "@78nailbomb",
+      "profile_image": "https://yt3.ggpht.com/ytc/AIdro_nscva1mD467uqHBjZUgtqV9evH1nyvN1dEkQRwloE=s48-c-k-c0x00ffffff-no-rj"
+    },
+    {
+      "id": 21,
+      "id_keyword": 1,
+      "id_mediaSource": 3,
+      "content": "In the Fall of 2023, adidas unleashed a beast with the Adizero Adios Pro Evo 1, a top-of-the-class running shoe that boasts a best-in-class...",
+      "url": "https://sneakernews.com/2025/04/16/adidas-adizero-adios-pro-evo-1-dicks-sporting-goods/",
+      "published_date": null,
+      "author": "Sneaker News",
+      "profile_image": null
+    },
+    {
+      "id": 22,
+      "id_keyword": 1,
+      "id_mediaSource": 3,
+      "content": "Adidas gave the classic Stan Smith tennis shoe an on-trend thin-sole update. Find details on the upcoming Stan Smith Low Pro release here.",
+      "url": "https://footwearnews.com/shoes/sneaker-news/adidas-stan-smith-low-pro-1234799886/",
+      "published_date": null,
+      "author": "Footwear News",
+      "profile_image": null
+    },
+    {
+      "id": 23,
+      "id_keyword": 1,
+      "id_mediaSource": 3,
+      "content": "adidas Originals x Brain Dead Hits the Tennis Court Once Again: This time delivering a full Spring/Summer 2025 collection, carried by a new...",
+      "url": "https://hypebeast.com/2025/4/adidas-originals-x-brain-dead-collab-ss25-release-info",
+      "published_date": null,
+      "author": "Hypebeast",
+      "profile_image": null
+    },
+    {
+      "id": 24,
+      "id_keyword": 1,
+      "id_mediaSource": 3,
+      "content": "Built for the streets! Kader's signature adidas Skateboarding pants are stylish and skate-ready in a new black colorway.",
+      "url": "https://www.skateboarding.com/trending-news/kader-sylla-and-adidas-skateboarding-signature-pants",
+      "published_date": null,
+      "author": "TransWorld SKATEboarding",
+      "profile_image": null
+    },
+    {
+      "id": 25,
+      "id_keyword": 1,
+      "id_mediaSource": 3,
+      "content": "Here's what you should get from Adidas for 25% off until April 22.",
+      "url": "https://www.whowhatwear.com/fashion/shopping/adidas-spring-sale-2025",
+      "published_date": null,
+      "author": "Who What Wear",
+      "profile_image": null
+    },
+    {
+      "id": 26,
+      "id_keyword": 1,
+      "id_mediaSource": 3,
+      "content": "adidas reveals the Samba Ruffle Stripes Pack in soft tones and silk detailing, releasing Summer 2025 for $120 USD.",
+      "url": "https://sneakerbardetroit.com/adidas-samba-ruffle-stripes-pack-2025/",
+      "published_date": null,
+      "author": "Sneaker Bar Detroit",
+      "profile_image": null
+    },
+    {
+      "id": 27,
+      "id_keyword": 1,
+      "id_mediaSource": 3,
+      "content": "Kith Is Back on the Pitch With adidas Football",
+      "url": "https://hypebeast.com/2025/4/kith-adidas-football-collaboration-collection-release-info",
+      "published_date": null,
+      "author": "Hypebeast",
+      "profile_image": null
+    },
+    {
+      "id": 28,
+      "id_keyword": 1,
+      "id_mediaSource": 3,
+      "content": "Zidane’s Legendary adidas Boot Is Back — But Way Softer",
+      "url": "https://www.highsnobiety.com/p/adidas-kith-predator-megarise-2025/",
+      "published_date": null,
+      "author": "Highsnobiety",
+      "profile_image": null
+    },
+    {
+      "id": 29,
+      "id_keyword": 1,
+      "id_mediaSource": 3,
+      "content": "Kith and Adidas Are Going All In on Soccer Style With Four Different Shoes",
+      "url": "https://footwearnews.com/shoes/sneaker-news/kith-adidas-soccer-spring-2025-collection-release-date-1234799414/",
+      "published_date": null,
+      "author": "Footwear News",
+      "profile_image": null
+    },
+    {
+      "id": 30,
+      "id_keyword": 1,
+      "id_mediaSource": 3,
+      "content": "Elisabeth Moss wore Adidas Superstar Sneakers like Jennifer Lawrence. Shop the chunky sneakers for spring at Nordstrom, Zappos, and Amazon.",
+      "url": "https://www.instyle.com/elisabeth-moss-adidas-superstar-sneakers-11710338",
+      "published_date": null,
+      "author": "InStyle",
+      "profile_image": null
+    },
+    {
+      "id": 31,
+      "id_keyword": 2,
+      "id_mediaSource": 2,
+      "content": "Baru! Wardah White Secret kini menjadi Wardah Crystal Secret: Kecewa dengan wardah sudah beli mahal mahal wajah malah item ngak seperti wardah yg dulu,nga tahu apakah ada yg palsu ya",
+      "url": "https://www.youtube.com/watch?v=z-2FAiG3R_A",
+      "published_date": "2025-03-04T11:47:52.000Z",
+      "author": "@RisaArpiyani",
+      "profile_image": "https://yt3.ggpht.com/ytc/AIdro_lTsn_SEf4XL2vXIaaoqLUud5NQ9oq-8qVva6nli6qHfYKIw450e_k2BCXQMQ4EGZfOvw=s48-c-k-c0x00ffffff-no-rj"
+    },
+    {
+      "id": 32,
+      "id_keyword": 2,
+      "id_mediaSource": 2,
+      "content": "Baru! Wardah White Secret kini menjadi Wardah Crystal Secret: Maaf, saya beli Wardah Cristal secret serum, tidak memiliki pipa di dalam botol., jadinya kalau ditekan serumnya nggak keluar. Tolong di perhatikan dg baik, dimana kalian sdh memiliki nama besar. Saya merasa tidak puas. Terima kasih",
+      "url": "https://www.youtube.com/watch?v=z-2FAiG3R_A",
+      "published_date": "2024-12-23T15:50:28.000Z",
+      "author": "@mamamauapa5819",
+      "profile_image": "https://yt3.ggpht.com/ytc/AIdro_nWBkhs3XZcENi1MSPCdcXzpUjnMm2sZJbVobSifX-nvmmNb8bXfpOmj_RTnLGbL03qbA=s48-c-k-c0x00ffffff-no-rj"
+    },
+    {
+      "id": 33,
+      "id_keyword": 2,
+      "id_mediaSource": 2,
+      "content": "Baru! Wardah White Secret kini menjadi Wardah Crystal Secret: Ga sia aku pake wardah dri sampo sampai skincare ..terimaksih sdh undang halda &amp; jarayut",
+      "url": "https://www.youtube.com/watch?v=z-2FAiG3R_A",
+      "published_date": "2024-12-13T21:08:57.000Z",
+      "author": "@AnisyaZara",
+      "profile_image": "https://yt3.ggpht.com/ytc/AIdro_lImVEFshLCzwKPwsKil_wI44W3fLO5VgHisdM_-Jtm5ZMsPSMXFTRot9-tSU3zW38Ftw=s48-c-k-c0x00ffffff-no-rj"
+    },
+    {
+      "id": 34,
+      "id_keyword": 2,
+      "id_mediaSource": 2,
+      "content": "Baru! Wardah White Secret kini menjadi Wardah Crystal Secret: Rangkaian white secret yg cocok, kenapa hilang, sudah habis banyak uangku untuk coba2 yg lain 😭<br>Waktu beli skincare Korea yg ngerogoh kocek banyak. Tapi masih ga cocok",
+      "url": "https://www.youtube.com/watch?v=z-2FAiG3R_A",
+      "published_date": "2023-05-12T21:20:56.000Z",
+      "author": "@bobbyputra308",
+      "profile_image": "https://yt3.ggpht.com/ytc/AIdro_lZq10OLHFQkMAyZNp499RwwDRBh_ojjsGSpZmSFb__FiM=s48-c-k-c0x00ffffff-no-rj"
+    },
+    {
+      "id": 35,
+      "id_keyword": 2,
+      "id_mediaSource": 2,
+      "content": "Baru! Wardah White Secret kini menjadi Wardah Crystal Secret: Dulu saya pake wardah white secret cocok, tapi sekarang kenapa diganti dengan cristal secret. Sudah sy coba yg cristal secret, tapi ga cocok. Kenapa di ganti.<br>Sekarang susah cari yg cocok, udah coba some by me, jeju corcoal, yg mengandung pemutih juga pernah dicoba,  masker2an,  dan masih banyak lagi. Sekarang coba skintific, tapi masih ga cocok, masih teringat waktu make white secret dulu.<br>Pihak wardah 🙏",
+      "url": "https://www.youtube.com/watch?v=z-2FAiG3R_A",
+      "published_date": "2023-05-12T21:17:00.000Z",
+      "author": "@bobbyputra308",
+      "profile_image": "https://yt3.ggpht.com/ytc/AIdro_lZq10OLHFQkMAyZNp499RwwDRBh_ojjsGSpZmSFb__FiM=s48-c-k-c0x00ffffff-no-rj"
+    },
+    {
+      "id": 36,
+      "id_keyword": 2,
+      "id_mediaSource": 2,
+      "content": "Baru! Wardah White Secret kini menjadi Wardah Crystal Secret: Saya dl pke Wardah white secret,cocok,trs skrng ganti nama jd crystal,kenapa y pas hbis wudhu jd  putih,luntur.trs pedih d mata?",
+      "url": "https://www.youtube.com/watch?v=z-2FAiG3R_A",
+      "published_date": "2022-07-24T23:34:03.000Z",
+      "author": "@saepulgojali7048",
+      "profile_image": "https://yt3.ggpht.com/ytc/AIdro_lA7jr0LZvBQFLmBc7jijnVjyoazsJEdCveoYk4bFvSLqy3mJRIVzhAwp7IKIkTOUTl9A=s48-c-k-c0x00ffffff-no-rj"
+    },
+    {
+      "id": 37,
+      "id_keyword": 2,
+      "id_mediaSource": 2,
+      "content": "Baru! Wardah White Secret kini menjadi Wardah Crystal Secret: Alhamdulillah pemakaian rutin 1bulan ni bintik&amp;noda hitam bekas jerawatku memudar...love banget..tapi untuk mencerahkan masih belum ada hasil gak papa karna masih dapet 1bulan soale kalo skincare yg udah BPOM katax bakalan kelihatan hasilx pemakaian 6sampek 8bulan...harus telaten 😌....produk Wardah yg crystal secret ni memang bagus",
+      "url": "https://www.youtube.com/watch?v=z-2FAiG3R_A",
+      "published_date": "2022-06-29T05:26:22.000Z",
+      "author": "@sweatheart6874",
+      "profile_image": "https://yt3.ggpht.com/FgtwMcn8zLN_s7u12fJqGSPThGafpT-GELjfJWiPv2R6sO7TAzlzaka70tStt9xS9bnPduQ9dCU=s48-c-k-c0x00ffffff-no-rj"
+    },
+    {
+      "id": 38,
+      "id_keyword": 2,
+      "id_mediaSource": 2,
+      "content": "Baru! Wardah White Secret kini menjadi Wardah Crystal Secret: Old is better",
+      "url": "https://www.youtube.com/watch?v=z-2FAiG3R_A",
+      "published_date": "2022-06-06T20:36:21.000Z",
+      "author": "@mordecai891",
+      "profile_image": "https://yt3.ggpht.com/9Y1kXpYg1VxFteOmfsKIofeeiLzFXHFX5PtrL_Idz1_7r6pcu63Tc_UEeIV6AsuWGRl1gNbr5w=s48-c-k-c0x00ffffff-no-rj"
+    },
+    {
+      "id": 39,
+      "id_keyword": 2,
+      "id_mediaSource": 2,
+      "content": "Baru! Wardah White Secret kini menjadi Wardah Crystal Secret: Aman gk kk dipake ibu hamil",
+      "url": "https://www.youtube.com/watch?v=z-2FAiG3R_A",
+      "published_date": "2022-04-03T01:18:05.000Z",
+      "author": "@fentilolitabahri961",
+      "profile_image": "https://yt3.ggpht.com/ytc/AIdro_loYYdv_TIHbT9YfNb0RqCF0Lha75qltfmtu_X_7rxDaWM=s48-c-k-c0x00ffffff-no-rj"
+    },
+    {
+      "id": 40,
+      "id_keyword": 2,
+      "id_mediaSource": 2,
+      "content": "Baru! Wardah White Secret kini menjadi Wardah Crystal Secret: Pliss jawab kak Wardah white secret itu boleh dipakai usia berapa ka?😫",
+      "url": "https://www.youtube.com/watch?v=z-2FAiG3R_A",
+      "published_date": "2022-01-15T23:34:36.000Z",
+      "author": "@rohmawatikhasanah4795",
+      "profile_image": "https://yt3.ggpht.com/ytc/AIdro_l-WPruEngifbfolAJ9ooMYouWRIljSLSUdcbFXhpBKLR2w067aQRcH7LDc0zzrTdX9yg=s48-c-k-c0x00ffffff-no-rj"
+    },
+    {
+      "id": 41,
+      "id_keyword": 2,
+      "id_mediaSource": 3,
+      "content": "Wardah Inam: Overjet helps the dental industry address inefficiencies while improving patient communication. Our AI-powered platform analyzes...",
+      "url": "https://datainnovation.org/2025/01/5-qs-for-wardah-inam-ceo-of-overjet/",
+      "published_date": null,
+      "author": "Center for Data Innovation",
+      "profile_image": null
+    },
+    {
+      "id": 42,
+      "id_keyword": 2,
+      "id_mediaSource": 3,
+      "content": "Press release - HTF Market Intelligence Consulting Private Limited - Halal Sunscreen Market Growth Potential is Booming Now: Wardah,...",
+      "url": "https://www.openpr.com/news/3961746/halal-sunscreen-market-growth-potential-is-booming-now-wardah",
+      "published_date": null,
+      "author": "openPR.com",
+      "profile_image": null
+    },
+    {
+      "id": 43,
+      "id_keyword": 2,
+      "id_mediaSource": 3,
+      "content": "Our goal was to become the first objective standard for dentistry, by using AI to detect and quantify oral pathologies with more precision than...",
+      "url": "https://pulse2.com/overjet-profile-wardah-inam-interview/",
+      "published_date": null,
+      "author": "Pulse 2.0",
+      "profile_image": null
+    },
+    {
+      "id": 44,
+      "id_keyword": 2,
+      "id_mediaSource": 3,
+      "content": "Wardah's presence at Open Iftar London 2025 is proof that goodness knows no boundaries. From Indonesia to various parts of the world, Wardah...",
+      "url": "https://www.prnewswire.co.uk/news-releases/kahf--wardah-support-open-iftar-london-2025-strengthening-global-brotherhood-302407307.html",
+      "published_date": null,
+      "author": "PR Newswire UK",
+      "profile_image": null
+    },
+    {
+      "id": 45,
+      "id_keyword": 2,
+      "id_mediaSource": 3,
+      "content": "In conversation with MARKETING-INTERACTIVE, ParagonCorp said that the campaign celebrates women who go beyond expectations, particularly during...",
+      "url": "https://www.marketing-interactive.com/wardah-s-campaign-with-paragoncorp-inspires-women-during-ramadan",
+      "published_date": null,
+      "author": "Marketing-Interactive",
+      "profile_image": null
+    },
+    {
+      "id": 46,
+      "id_keyword": 2,
+      "id_mediaSource": 3,
+      "content": "Indonesia's Wardah surges past global giants like Vaseline, Dove, and Nivea to become Southeast Asia's top beauty brand in 2024.",
+      "url": "https://www.campaignasia.com/article/top-10-beauty-brands-in-southeast-asia/498066",
+      "published_date": null,
+      "author": "Campaign Asia",
+      "profile_image": null
+    },
+    {
+      "id": 47,
+      "id_keyword": 2,
+      "id_mediaSource": 3,
+      "content": "Wardah Inam is disrupting the dental industry. She is the cofounder and CEO of Overjet, a Boston-based startup that uses FDA-cleared artificial intelligence to...",
+      "url": "https://www.bostonglobe.com/tech-power-players/year/2023/person/wardah-inam-overjet/",
+      "published_date": null,
+      "author": "The Boston Globe",
+      "profile_image": null
+    },
+    {
+      "id": 48,
+      "id_keyword": 2,
+      "id_mediaSource": 3,
+      "content": "Wardah introduced its newest technology, namely Wardah Color Intelligence which is integrated with Beauty AI Personal Color.",
+      "url": "https://voi.id/en/technology/460264",
+      "published_date": null,
+      "author": "VOI.ID",
+      "profile_image": null
+    },
+    {
+      "id": 49,
+      "id_keyword": 2,
+      "id_mediaSource": 3,
+      "content": "Waridi Wardah is me embodying my expertise as a mentor, role model, public speaker, fashion project designer, model, and storyteller through my...",
+      "url": "https://africa.businessinsider.com/local/lifestyle/revolutionizing-african-fashion-a-conversation-with-waridi-wardah/kldkfj0",
+      "published_date": null,
+      "author": "Business Insider Africa",
+      "profile_image": null
+    },
+    {
+      "id": 50,
+      "id_keyword": 2,
+      "id_mediaSource": 3,
+      "content": "Living in a beautiful country like the UAE, where the spirit of Ramadan comes alive through stunning decorations, glowing lanterns and vibrant...",
+      "url": "https://www.gulftoday.ae/culture/2025/03/02/radiance-of-ramadan-wardah-asad-reflects-on-art-and-the-holy-month",
+      "published_date": null,
+      "author": "Gulf Today",
+      "profile_image": null
+    },
+    {
+      "id": 51,
+      "id_keyword": 2,
+      "id_mediaSource": 3,
+      "content": "A very dedicated wife and matriarch, she worked the family farm in Syria with her husband while raising their children. In the 1980s, she made the hard decision...",
+      "url": "https://www.bcfh.com/obituaries/Wardah-Al-Hosry?obId=32518041",
+      "published_date": null,
+      "author": "Bagnasco & Calcaterra Funeral Homes",
+      "profile_image": null
+    },
+    {
+      "id": 52,
+      "id_keyword": 3,
+      "id_mediaSource": 1,
+      "content": "RT @theKomixBro: LADY GAGA in 4K\nFrom COACHELLA\n4K MOBILE WALLPAPER\nfor iPhone &amp;📱 Samsung phones!\n\n📸 Kevin Mazur/Getty\n📱 4K | 1868  ×  3840…",
+      "url": "https://twitter.com/i/web/status/1912898092052922691",
+      "published_date": "2025-04-17T08:56:59.000Z",
+      "author": "victariano",
+      "profile_image": "https://pbs.twimg.com/profile_images/1912307294794072064/r2tnOB-r_normal.jpg"
+    },
+    {
+      "id": 53,
+      "id_keyword": 3,
+      "id_mediaSource": 1,
+      "content": "RT @chiliimusk: 💲3⃣0️⃣ • 8⃣ Hours 🌵 \n\n🌵 RP &amp; Follow @Samsung_Chain\n\n[ AD - NFA - NPN - DYOR ]",
+      "url": "https://twitter.com/i/web/status/1912898074500104571",
+      "published_date": "2025-04-17T08:56:55.000Z",
+      "author": "moneyfesting31",
+      "profile_image": "https://pbs.twimg.com/profile_images/1898599596626223104/k09Eh1Wg_normal.jpg"
+    },
+    {
+      "id": 54,
+      "id_keyword": 3,
+      "id_mediaSource": 1,
+      "content": "Check out Samsung Tv stand legs bn63-18575b 18576b UN50TU8000FXZA UN50TU8200FXZA Ship FASt https://t.co/it5lgKLA4v #eBay via @eBay",
+      "url": "https://twitter.com/i/web/status/1912898069898678346",
+      "published_date": "2025-04-17T08:56:54.000Z",
+      "author": "WholeSaleRemote",
+      "profile_image": "https://pbs.twimg.com/profile_images/866428270551506944/5OX26zX8_normal.jpg"
+    },
+    {
+      "id": 55,
+      "id_keyword": 3,
+      "id_mediaSource": 1,
+      "content": "Samsung Galaxy S25 Ultra April International Flagship Phone Giveaway https://t.co/EFor0b6m6P",
+      "url": "https://twitter.com/i/web/status/1912898048335974614",
+      "published_date": "2025-04-17T08:56:49.000Z",
+      "author": "workwinsave",
+      "profile_image": "https://pbs.twimg.com/profile_images/1043250205720641537/I5Xt3qdJ_normal.jpg"
+    },
+    {
+      "id": 56,
+      "id_keyword": 3,
+      "id_mediaSource": 1,
+      "content": "USB-C to Type C Color Cable For Apple iPhone 15 PD 60W Fast Charging For Huawei Xiaomi Samsung Type C Weaving Cable Accessories\nUSD USD 1.25 (47% off, USD USD 2.36)\n\nhttps://t.co/TKlumhrDL8\n#USB-C #USB-C #Audio #AliExpress",
+      "url": "https://twitter.com/i/web/status/1912898043369918834",
+      "published_date": "2025-04-17T08:56:48.000Z",
+      "author": "ai_shopper",
+      "profile_image": "https://pbs.twimg.com/profile_images/1826844356944560128/226JPHeb_normal.jpg"
+    },
+    {
+      "id": 57,
+      "id_keyword": 3,
+      "id_mediaSource": 1,
+      "content": "@DeepikaBhardwaj samsung a56",
+      "url": "https://twitter.com/i/web/status/1912898042912735540",
+      "published_date": "2025-04-17T08:56:48.000Z",
+      "author": "jointoaman",
+      "profile_image": "https://pbs.twimg.com/profile_images/1800412521129725953/aEgIbO19_normal.jpg"
+    },
+    {
+      "id": 58,
+      "id_keyword": 3,
+      "id_mediaSource": 1,
+      "content": "RT @wtml0907: ✈️PRE #ENHYPEN 250413 Twitter X\n\n#HEESEUNG 168CM: Monotone Vintage Series Case ( -30~50%)\nJelly: 390 (มจ 190)\nTank: 450 (มจ 2…",
+      "url": "https://twitter.com/i/web/status/1912898033349804314",
+      "published_date": "2025-04-17T08:56:45.000Z",
+      "author": "jungwon081202",
+      "profile_image": "https://pbs.twimg.com/profile_images/1904104183755915264/vJwDxpnn_normal.jpg"
+    },
+    {
+      "id": 59,
+      "id_keyword": 3,
+      "id_mediaSource": 1,
+      "content": "@mr_cbillionaire Samsung brotherly",
+      "url": "https://twitter.com/i/web/status/1912898029041967245",
+      "published_date": "2025-04-17T08:56:44.000Z",
+      "author": "CObinna13856",
+      "profile_image": "https://pbs.twimg.com/profile_images/1777237760631246848/VHIJNE-Y_normal.png"
+    },
+    {
+      "id": 60,
+      "id_keyword": 3,
+      "id_mediaSource": 1,
+      "content": "RT @jamedamanga: Gente, já escutei a gravação ao vivo no fone, na JBL, no Samsung pocket, no iPhone, no guitarrinha e no paredão… E nada… A…",
+      "url": "https://twitter.com/i/web/status/1912898026894479416",
+      "published_date": "2025-04-17T08:56:44.000Z",
+      "author": "lopslet",
+      "profile_image": "https://pbs.twimg.com/profile_images/1844044724186832896/bDBlDWhD_normal.jpg"
+    },
+    {
+      "id": 61,
+      "id_keyword": 3,
+      "id_mediaSource": 1,
+      "content": "@mr_cbillionaire Samsung always 😍❤️",
+      "url": "https://twitter.com/i/web/status/1912897969067634706",
+      "published_date": "2025-04-17T08:56:30.000Z",
+      "author": "IAMANONYMOUNS",
+      "profile_image": "https://pbs.twimg.com/profile_images/1882876496189980672/gAFJByiz_normal.jpg"
+    },
+    {
+      "id": 62,
+      "id_keyword": 2,
+      "id_mediaSource": 1,
+      "content": "mau wardah lip matte shade 11 sama wardah lip glasting 07 ada ngga",
+      "url": "https://twitter.com/i/web/status/1913574059352396287",
+      "published_date": "2025-04-19T05:43:02.000Z",
+      "author": "wifstle",
+      "profile_image": "https://pbs.twimg.com/profile_images/1889227785744588800/H-dFHNz4_normal.jpg"
+    },
+    {
+      "id": 63,
+      "id_keyword": 2,
+      "id_mediaSource": 1,
+      "content": "RT @heavensdew_co: Omg koranggg, happy to say concealer Wardah ni dah boleh ganti Fit Me 😭🫶🏻\n\nPakai concealer je pun dah boleh tutup parut…",
+      "url": "https://twitter.com/i/web/status/1913573939978420534",
+      "published_date": "2025-04-19T05:42:34.000Z",
+      "author": "eLjerla",
+      "profile_image": "https://pbs.twimg.com/profile_images/1885544198872657920/YdrhpsyG_normal.jpg"
+    },
+    {
+      "id": 64,
+      "id_keyword": 2,
+      "id_mediaSource": 1,
+      "content": "RT @ardinifatihahh: Okayyy girliesss, Wardah buat another public event for us to try EVERYY product dioranggg yee 😩🙏🏻😍\n\nthis is a NEED! seb…",
+      "url": "https://twitter.com/i/web/status/1913573800672973159",
+      "published_date": "2025-04-19T05:42:01.000Z",
+      "author": "crydrhn",
+      "profile_image": "https://pbs.twimg.com/profile_images/1898229582530236416/cpSyiTWn_normal.jpg"
+    },
+    {
+      "id": 65,
+      "id_keyword": 2,
+      "id_mediaSource": 1,
+      "content": "RT @goodlucksofea: Tak sangka, as an introvert, I actually enjoyed myself kat event Wardah ni. \n\nSerious best, tak menyesal langsung. Total…",
+      "url": "https://twitter.com/i/web/status/1913573612881326370",
+      "published_date": "2025-04-19T05:41:16.000Z",
+      "author": "crydrhn",
+      "profile_image": "https://pbs.twimg.com/profile_images/1898229582530236416/cpSyiTWn_normal.jpg"
+    },
+    {
+      "id": 66,
+      "id_keyword": 2,
+      "id_mediaSource": 1,
+      "content": "RT @heavensdew_co: Omg koranggg, happy to say concealer Wardah ni dah boleh ganti Fit Me 😭🫶🏻\n\nPakai concealer je pun dah boleh tutup parut…",
+      "url": "https://twitter.com/i/web/status/1913573610796749106",
+      "published_date": "2025-04-19T05:41:15.000Z",
+      "author": "GiftBox_Izz",
+      "profile_image": "https://pbs.twimg.com/profile_images/1676400129207857153/4Sb7iPPR_normal.jpg"
+    },
+    {
+      "id": 67,
+      "id_keyword": 2,
+      "id_mediaSource": 1,
+      "content": "RT @heavensdew_co: Omg koranggg, happy to say concealer Wardah ni dah boleh ganti Fit Me 😭🫶🏻\n\nPakai concealer je pun dah boleh tutup parut…",
+      "url": "https://twitter.com/i/web/status/1913573503129010193",
+      "published_date": "2025-04-19T05:40:50.000Z",
+      "author": "mhbeautyy",
+      "profile_image": "https://pbs.twimg.com/profile_images/1786725883728035840/-g0oOV5F_normal.jpg"
+    },
+    {
+      "id": 68,
+      "id_keyword": 2,
+      "id_mediaSource": 1,
+      "content": "@sotomatcha skin type : oily, acne prone skin\n\n1st cleanser : wardah mw/hadalabo oil\nface wash : hadalabo putih\nmoist : corsx oil free\nsunscreen: wardah acne spf 30 an",
+      "url": "https://twitter.com/i/web/status/1913573498494259466",
+      "published_date": "2025-04-19T05:40:49.000Z",
+      "author": "deluworld",
+      "profile_image": "https://pbs.twimg.com/profile_images/1871819761975517184/CzDCqQDH_normal.jpg"
+    },
+    {
+      "id": 69,
+      "id_keyword": 2,
+      "id_mediaSource": 1,
+      "content": "@tanyarlfes Cushion : focallure\nMate powder : Wardah colorfit\nLoose powder: Emina\nAlis : implora\nEyeshadow: pinkflash \nMascara : bnb putih \nEyeliner : Pinkflash\nLip + blush : Wardah glasting, hanasui next level, Omg",
+      "url": "https://twitter.com/i/web/status/1913573446291955912",
+      "published_date": "2025-04-19T05:40:36.000Z",
+      "author": "yehzshuhua",
+      "profile_image": "https://pbs.twimg.com/profile_images/1909976698659246080/j1fO0zTq_normal.jpg"
+    },
+    {
+      "id": 70,
+      "id_keyword": 2,
+      "id_mediaSource": 1,
+      "content": "RT @goodlucksofea: Tak sangka, as an introvert, I actually enjoyed myself kat event Wardah ni. \n\nSerious best, tak menyesal langsung. Total…",
+      "url": "https://twitter.com/i/web/status/1913573425542729802",
+      "published_date": "2025-04-19T05:40:31.000Z",
+      "author": "mhbeautyy",
+      "profile_image": "https://pbs.twimg.com/profile_images/1786725883728035840/-g0oOV5F_normal.jpg"
+    },
+    {
+      "id": 71,
+      "id_keyword": 2,
+      "id_mediaSource": 1,
+      "content": "RT @cieIdeminuit: rekomendasi lip product buat autumn girlie 🥰\n\nAda tambahan lagi\n- rollover reaction mimosa\n- wardah dew tint cocoa melt (…",
+      "url": "https://twitter.com/i/web/status/1913573232055120111",
+      "published_date": "2025-04-19T05:39:45.000Z",
+      "author": "novembliss",
+      "profile_image": "https://pbs.twimg.com/profile_images/1908181561499070464/Qm14Z3l1_normal.jpg"
+    }
+  ],
+  "sentiments": [
+    {
+      "id": 1,
+      "id_mentions": 1,
+      "sentiment_score": "-1.00",
+      "sentiment_category": "negative",
+      "language": "en",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 2,
+      "id_mentions": 2,
+      "sentiment_score": "1.00",
+      "sentiment_category": "positive",
+      "language": "en",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 3,
+      "id_mentions": 3,
+      "sentiment_score": "2.00",
+      "sentiment_category": "positive",
+      "language": "en",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 4,
+      "id_mentions": 4,
+      "sentiment_score": null,
+      "sentiment_category": null,
+      "language": "other",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 5,
+      "id_mentions": 5,
+      "sentiment_score": "1.00",
+      "sentiment_category": "positive",
+      "language": "en",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 6,
+      "id_mentions": 6,
+      "sentiment_score": "0.00",
+      "sentiment_category": "neutral",
+      "language": "en",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 7,
+      "id_mentions": 7,
+      "sentiment_score": "1.00",
+      "sentiment_category": "positive",
+      "language": "en",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 8,
+      "id_mentions": 8,
+      "sentiment_score": null,
+      "sentiment_category": null,
+      "language": "other",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 9,
+      "id_mentions": 9,
+      "sentiment_score": null,
+      "sentiment_category": null,
+      "language": "other",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 10,
+      "id_mentions": 10,
+      "sentiment_score": "4.00",
+      "sentiment_category": "positive",
+      "language": "en",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 11,
+      "id_mentions": 11,
+      "sentiment_score": null,
+      "sentiment_category": null,
+      "language": "other",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 12,
+      "id_mentions": 12,
+      "sentiment_score": "9.00",
+      "sentiment_category": "positive",
+      "language": "en",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 13,
+      "id_mentions": 13,
+      "sentiment_score": "-1.00",
+      "sentiment_category": "negative",
+      "language": "en",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 14,
+      "id_mentions": 14,
+      "sentiment_score": "4.00",
+      "sentiment_category": "positive",
+      "language": "en",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 15,
+      "id_mentions": 15,
+      "sentiment_score": "2.00",
+      "sentiment_category": "positive",
+      "language": "en",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 16,
+      "id_mentions": 16,
+      "sentiment_score": "0.00",
+      "sentiment_category": "neutral",
+      "language": "en",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 17,
+      "id_mentions": 17,
+      "sentiment_score": "2.00",
+      "sentiment_category": "positive",
+      "language": "en",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 18,
+      "id_mentions": 18,
+      "sentiment_score": "0.00",
+      "sentiment_category": "neutral",
+      "language": "en",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 19,
+      "id_mentions": 19,
+      "sentiment_score": "2.00",
+      "sentiment_category": "positive",
+      "language": "en",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 20,
+      "id_mentions": 20,
+      "sentiment_score": "2.00",
+      "sentiment_category": "positive",
+      "language": "en",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 21,
+      "id_mentions": 21,
+      "sentiment_score": "0.00",
+      "sentiment_category": "neutral",
+      "language": "en",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 22,
+      "id_mentions": 22,
+      "sentiment_score": "0.00",
+      "sentiment_category": "neutral",
+      "language": "en",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 23,
+      "id_mentions": 23,
+      "sentiment_score": "-3.00",
+      "sentiment_category": "negative",
+      "language": "en",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 24,
+      "id_mentions": 24,
+      "sentiment_score": "0.00",
+      "sentiment_category": "neutral",
+      "language": "en",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 25,
+      "id_mentions": 25,
+      "sentiment_score": null,
+      "sentiment_category": null,
+      "language": "other",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 26,
+      "id_mentions": 26,
+      "sentiment_score": "0.00",
+      "sentiment_category": "neutral",
+      "language": "en",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 27,
+      "id_mentions": 27,
+      "sentiment_score": "0.00",
+      "sentiment_category": "neutral",
+      "language": "en",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 28,
+      "id_mentions": 28,
+      "sentiment_score": null,
+      "sentiment_category": null,
+      "language": "other",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 29,
+      "id_mentions": 29,
+      "sentiment_score": "0.00",
+      "sentiment_category": "neutral",
+      "language": "en",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 30,
+      "id_mentions": 30,
+      "sentiment_score": "2.00",
+      "sentiment_category": "positive",
+      "language": "en",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 31,
+      "id_mentions": 31,
+      "sentiment_score": "-3.00",
+      "sentiment_category": "negative",
+      "language": "id",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 32,
+      "id_mentions": 32,
+      "sentiment_score": "0.00",
+      "sentiment_category": "neutral",
+      "language": "id",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 33,
+      "id_mentions": 33,
+      "sentiment_score": "0.00",
+      "sentiment_category": "neutral",
+      "language": "id",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 34,
+      "id_mentions": 34,
+      "sentiment_score": "0.00",
+      "sentiment_category": "neutral",
+      "language": "id",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 35,
+      "id_mentions": 35,
+      "sentiment_score": "0.00",
+      "sentiment_category": "neutral",
+      "language": "id",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 36,
+      "id_mentions": 36,
+      "sentiment_score": "0.00",
+      "sentiment_category": "neutral",
+      "language": "id",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 37,
+      "id_mentions": 37,
+      "sentiment_score": "2.00",
+      "sentiment_category": "positive",
+      "language": "id",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 38,
+      "id_mentions": 38,
+      "sentiment_score": "2.00",
+      "sentiment_category": "positive",
+      "language": "id",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 39,
+      "id_mentions": 39,
+      "sentiment_score": "0.00",
+      "sentiment_category": "neutral",
+      "language": "id",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 40,
+      "id_mentions": 40,
+      "sentiment_score": "0.00",
+      "sentiment_category": "neutral",
+      "language": "id",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 41,
+      "id_mentions": 41,
+      "sentiment_score": "4.00",
+      "sentiment_category": "positive",
+      "language": "en",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 42,
+      "id_mentions": 42,
+      "sentiment_score": "1.00",
+      "sentiment_category": "positive",
+      "language": "en",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 43,
+      "id_mentions": 43,
+      "sentiment_score": "0.00",
+      "sentiment_category": "neutral",
+      "language": "en",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 44,
+      "id_mentions": 44,
+      "sentiment_score": "2.00",
+      "sentiment_category": "positive",
+      "language": "en",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 45,
+      "id_mentions": 45,
+      "sentiment_score": "3.00",
+      "sentiment_category": "positive",
+      "language": "en",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 46,
+      "id_mentions": 46,
+      "sentiment_score": "7.00",
+      "sentiment_category": "positive",
+      "language": "en",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 47,
+      "id_mentions": 47,
+      "sentiment_score": "-2.00",
+      "sentiment_category": "negative",
+      "language": "en",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 48,
+      "id_mentions": 48,
+      "sentiment_score": "3.00",
+      "sentiment_category": "positive",
+      "language": "en",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 49,
+      "id_mentions": 49,
+      "sentiment_score": null,
+      "sentiment_category": null,
+      "language": "other",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 50,
+      "id_mentions": 50,
+      "sentiment_score": "11.00",
+      "sentiment_category": "positive",
+      "language": "en",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 51,
+      "id_mentions": 51,
+      "sentiment_score": "1.00",
+      "sentiment_category": "positive",
+      "language": "en",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 52,
+      "id_mentions": 52,
+      "sentiment_score": null,
+      "sentiment_category": null,
+      "language": "other",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 53,
+      "id_mentions": 53,
+      "sentiment_score": null,
+      "sentiment_category": null,
+      "language": "other",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 54,
+      "id_mentions": 54,
+      "sentiment_score": null,
+      "sentiment_category": null,
+      "language": "other",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 55,
+      "id_mentions": 55,
+      "sentiment_score": null,
+      "sentiment_category": null,
+      "language": "other",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 56,
+      "id_mentions": 56,
+      "sentiment_score": "0.00",
+      "sentiment_category": "neutral",
+      "language": "en",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 57,
+      "id_mentions": 57,
+      "sentiment_score": null,
+      "sentiment_category": null,
+      "language": "other",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 58,
+      "id_mentions": 58,
+      "sentiment_score": null,
+      "sentiment_category": null,
+      "language": "other",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 59,
+      "id_mentions": 59,
+      "sentiment_score": "0.00",
+      "sentiment_category": "neutral",
+      "language": "en",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 60,
+      "id_mentions": 60,
+      "sentiment_score": null,
+      "sentiment_category": null,
+      "language": "other",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 61,
+      "id_mentions": 61,
+      "sentiment_score": null,
+      "sentiment_category": null,
+      "language": "other",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 62,
+      "id_mentions": 62,
+      "sentiment_score": null,
+      "sentiment_category": null,
+      "language": "other",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 63,
+      "id_mentions": 63,
+      "sentiment_score": null,
+      "sentiment_category": null,
+      "language": "other",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 64,
+      "id_mentions": 64,
+      "sentiment_score": "0.00",
+      "sentiment_category": "neutral",
+      "language": "en",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 65,
+      "id_mentions": 65,
+      "sentiment_score": "2.00",
+      "sentiment_category": "positive",
+      "language": "en",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 66,
+      "id_mentions": 66,
+      "sentiment_score": null,
+      "sentiment_category": null,
+      "language": "other",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 67,
+      "id_mentions": 67,
+      "sentiment_score": null,
+      "sentiment_category": null,
+      "language": "other",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 68,
+      "id_mentions": 68,
+      "sentiment_score": "1.00",
+      "sentiment_category": "positive",
+      "language": "en",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 69,
+      "id_mentions": 69,
+      "sentiment_score": null,
+      "sentiment_category": null,
+      "language": "other",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 70,
+      "id_mentions": 70,
+      "sentiment_score": "2.00",
+      "sentiment_category": "positive",
+      "language": "en",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    },
+    {
+      "id": 71,
+      "id_mentions": 71,
+      "sentiment_score": "0.00",
+      "sentiment_category": "neutral",
+      "language": "id",
+      "analyzedAt": "2025-04-19T12:43:28.000Z"
+    }
+  ],
+  "reports": [
+    {
+      "id": 1,
+      "id_project": 1,
+      "created_by": "Nisaul Husna",
+      "report_type": "weekly",
+      "report_parameters": "engagement,reach,sentiment",
+      "report_data": "{\"engagement\": 5200, \"reach\": 15000, \"sentiment\": \"positive\"}",
+      "generatedAt": "2025-04-12T03:30:00.000Z",
+      "expiresAt": "2025-05-12T03:30:00.000Z"
+    },
+    {
+      "id": 2,
+      "id_project": 1,
+      "created_by": "Nisaul Husna",
+      "report_type": "daily",
+      "report_parameters": "clicks,impressions",
+      "report_data": "{\"clicks\": 450, \"impressions\": 3500}",
+      "generatedAt": "2025-04-18T02:15:00.000Z",
+      "expiresAt": "2025-04-25T02:15:00.000Z"
+    },
+    {
+      "id": 3,
+      "id_project": 2,
+      "created_by": "Nisaul Husna",
+      "report_type": "monthly",
+      "report_parameters": "sales,revenue,engagement",
+      "report_data": "{\"sales\": 1250, \"revenue\": 87500, \"engagement\": 12800}",
+      "generatedAt": "2025-04-01T09:20:00.000Z",
+      "expiresAt": "2025-07-01T09:20:00.000Z"
+    },
+    {
+      "id": 4,
+      "id_project": 2,
+      "created_by": "Intan Febyola",
+      "report_type": "weekly",
+      "report_parameters": "clicks,conversions",
+      "report_data": "{\"clicks\": 3200, \"conversions\": 480}",
+      "generatedAt": "2025-04-15T07:45:00.000Z",
+      "expiresAt": "2025-05-15T07:45:00.000Z"
+    },
+    {
+      "id": 5,
+      "id_project": 3,
+      "created_by": "Karenina Malik",
+      "report_type": "daily",
+      "report_parameters": "views,comments,shares",
+      "report_data": "{\"views\": 1800, \"comments\": 320, \"shares\": 150}",
+      "generatedAt": "2025-04-19T01:00:00.000Z",
+      "expiresAt": "2025-04-26T01:00:00.000Z"
+    },
+    {
+      "id": 6,
+      "id_project": 4,
+      "created_by": "Nisaul Husna",
+      "report_type": "monthly",
+      "report_parameters": "impressions,ctr,conversions",
+      "report_data": "{\"impressions\": 45000, \"ctr\": 3.2, \"conversions\": 1450}",
+      "generatedAt": "2025-03-31T04:30:00.000Z",
+      "expiresAt": "2025-06-30T04:30:00.000Z"
+    },
+    {
+      "id": 7,
+      "id_project": 4,
+      "created_by": "Intan Febyola",
+      "report_type": "weekly",
+      "report_parameters": "engagement,mentions",
+      "report_data": "{\"engagement\": 7600, \"mentions\": 450}",
+      "generatedAt": "2025-04-14T06:20:00.000Z",
+      "expiresAt": "2025-05-14T06:20:00.000Z"
+    }
+  ]
+}
