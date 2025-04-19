@@ -92,3 +92,28 @@ exports.deleteUser = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
+
+//mengambil semua aktivitas login user
+exports.getLoginLogs = async (req, res) => {
+  try {
+    const userId = req.user?.id;
+    console.log('DEBUG userId:', userId); // Tambahin ini untuk cek user
+
+    if (!userId) {
+      return res.status(401).json({ message: 'Unauthorized' });
+    }
+
+    const [results] = await db.query(
+      'SELECT COUNT(*) AS loginCount FROM log_activities WHERE id_user = ? AND action_type = ?',
+      [userId, ACTION_TYPES.LOGIN]
+    );
+
+    console.log('DEBUG login count query result:', results); // Debug hasil query
+
+    res.json({ loginCount: results[0].loginCount });
+  } catch (err) {
+    console.error('❌ Error fetching login count:', err);
+    res.status(500).json({ message: 'Failed to fetch login count', error: err.message });
+  }
+};
+
