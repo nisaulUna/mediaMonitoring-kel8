@@ -23,7 +23,7 @@ Cukup dengan memasukkan satu **keyword**, sistem secara otomatis akan menampilka
 
 ---
 
-## ⚙️ Background Workers
+## ⚙️ Service Workers
 
 1. **mentionFetchWorker** – Mengambil data dari API eksternal setiap 5 menit.  
 2. **backupWorker** – Melakukan backup otomatis seluruh data ke file JSON.  
