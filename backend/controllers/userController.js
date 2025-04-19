@@ -26,7 +26,7 @@ exports.getUserById = async (req, res) => {
 
 // Update user
 exports.updateUser = async (req, res) => {
-  const userId = req.user.id
+  const userId = req.user.id;
   const { username, name, email, password } = req.body;
 
   if (!username || !email || !password || !name) {
@@ -35,10 +35,21 @@ exports.updateUser = async (req, res) => {
 
   try {
     const hashedPassword = await bcrypt.hash(password, 10);
+
     await db.query(
       'UPDATE users SET username = ?, name = ?, email = ?, password = ? WHERE id = ?',
       [username, name, email, hashedPassword, userId]
     );
+// Log aktivitas update user
+
+    const ipAddress = req.ip || req.connection.remoteAddress;
+    await logActivity(userId, ACTION_TYPES.UPDATE_PROFIL, req, {
+      username,
+      email,
+      ip: ipAddress,
+      message: 'User profile updated'
+    });
+
     res.status(200).json({ message: 'User updated' });
   } catch (err) {
     res.status(500).json({ error: err.message });
@@ -71,13 +82,6 @@ exports.deleteUser = async (req, res) => {
         JSON.stringify({ project_name, userId })
       );
     }
-
-    // Log aktivitas penghapusan akun
-    const ipAddress = req.ip || req.connection.remoteAddress;
-    await logActivity(userId, ACTION_TYPES.DELETE_ACCOUNT, req, {
-      username,
-      ip: ipAddress,
-    });
 
     // Hapus user dari database
     await db.query('DELETE FROM log_activities WHERE id_user = ?', [userId]);
