@@ -206,6 +206,19 @@ CREATE TABLE `reports` (
   `expiresAt` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `reports`
+--
+
+INSERT INTO reports (id, id_project, created_by, report_type, report_parameters, report_data, generatedAt, expiresAt) VALUES
+(1, 1, 'Nisaul Husna', 'weekly', 'engagement,reach,sentiment', '{"engagement": 5200, "reach": 15000, "sentiment": "positive"}', '2025-04-12 10:30:00', '2025-05-12 10:30:00'),
+(2, 1, 'Nisaul Husna', 'daily', 'clicks,impressions', '{"clicks": 450, "impressions": 3500}', '2025-04-18 09:15:00', '2025-04-25 09:15:00'),
+(3, 2, 'Nisaul Husna', 'monthly', 'sales,revenue,engagement', '{"sales": 1250, "revenue": 87500, "engagement": 12800}', '2025-04-01 16:20:00', '2025-07-01 16:20:00'),
+(4, 2, 'Intan Febyola', 'weekly', 'clicks,conversions', '{"clicks": 3200, "conversions": 480}', '2025-04-15 14:45:00', '2025-05-15 14:45:00'),
+(5, 3, 'Karenina Malik', 'daily', 'views,comments,shares', '{"views": 1800, "comments": 320, "shares": 150}', '2025-04-19 08:00:00', '2025-04-26 08:00:00'),
+(6, 4, 'Nisaul Husna', 'monthly', 'impressions,ctr,conversions', '{"impressions": 45000, "ctr": 3.2, "conversions": 1450}', '2025-03-31 11:30:00', '2025-06-30 11:30:00'),
+(7, 4, 'Intan Febyola', 'weekly', 'engagement,mentions', '{"engagement": 7600, "mentions": 450}', '2025-04-14 13:20:00', '2025-05-14 13:20:00');
+
 -- --------------------------------------------------------
 
 --
@@ -458,6 +471,12 @@ ALTER TABLE `reports`
 ALTER TABLE `sentiment_analysis`
   ADD CONSTRAINT `sentiment_analysis_ibfk_1` FOREIGN KEY (`id_mentions`) REFERENCES `media_mentions` (`id`);
 COMMIT;
+
+ALTER TABLE projects
+ADD COLUMN deletedAt DATETIME NULL;
+
+ALTER TABLE log_activities
+MODIFY COLUMN action_type ENUM('login', 'logout', 'register', 'update_profile', 'delete_account', 'failed_login') DEFAULT NULL;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
