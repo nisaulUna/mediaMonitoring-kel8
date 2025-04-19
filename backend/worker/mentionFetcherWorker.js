@@ -1,7 +1,6 @@
 require("dotenv").config()
+const { db, redis } = require("../config")
 const axios = require("axios")
-const { db, redis } = require("./config")
-const franc = require('franc')
 
 async function runWorker() {
 
@@ -182,7 +181,7 @@ setInterval(async () => {
     await runWorker()
   
     try {
-      await axios.post("http://localhost:3000/search/sentiment")
+      await axios.post("http://localhost:3000/sentiment")
       console.log(" Sentimen untuk seluruh mentions telah dianalisis.")
     } catch (err) {
       console.error(" Gagal hit sentimen API:", err.message)

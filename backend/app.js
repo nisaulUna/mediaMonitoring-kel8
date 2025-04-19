@@ -7,6 +7,14 @@ const PORT = 3000
 app.use(express.json())
 
 // Routing
+const authRoutes = require('./routes/authRoutes');
+const projectRoute = require("./routes/projectRoute");
+const sentimentRoute = require('./routes/sentimentRoute');
+const redisRoute = require('./routes/redisRoute');
+app.use('/auth', authRoutes);
+app.use("/search", projectRoute) 
+app.use("/sentiment", sentimentRoute) 
+app.use("/cache", redisRoute) 
 const mainPageRoute = require("./routes/mainPageRoute")
 const authRoutes = require('./routes/authRoutes');
 app.use("/", mainPageRoute) 
