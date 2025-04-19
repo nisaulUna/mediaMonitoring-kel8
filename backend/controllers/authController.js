@@ -3,18 +3,46 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const { db } = require('../config');
 
-// Membuat rate limiter untuk login dan register
+// Rate limiter
 const limiter = rateLimit({
     windowMs: 15 * 60 * 1000, // 15 menit
-    max: 20, // maksimal 5 permintaan per IP dalam waktu 15 menit
+    max: 20, // maksimal 20 permintaan per IP
     message: 'Too many requests, please try again later.'
 });
 
-// Apply limiter middleware hanya untuk rute login dan register
+// Konstanta action type
+const ACTION_TYPES = {
+    LOGIN: 'login',
+    LOGOUT: 'logout',
+    REGISTER: 'register',
+    UPDATE_PROFILE: 'update_profile',
+    DELETE_ACCOUNT: 'delete_account',
+    FAILED_LOGIN: 'failed_login'
+};
+
+// Helper log activity (update nama tabel jadi log_activities)
+async function logActivity(userId, actionType, req, extraData = {}) {
+    try {
+        const actionDetails = JSON.stringify({
+            ip: req.ip,
+            userAgent: req.headers['user-agent'],
+            ...extraData
+        });
+
+        await db.query(
+            'INSERT INTO log_activities (id_user, action_type, action_details) VALUES (?, ?, ?)',
+            [userId, actionType, actionDetails]
+        );
+    } catch (err) {
+        console.error('Failed to log activity:', err);
+    }
+}
+
+// Register
 exports.register = [limiter, async (req, res) => {
     const { username, name, email, password } = req.body;
 
-    if (!username || !name || !email || !password ) {
+    if (!username || !name || !email || !password) {
         return res.status(400).json({ message: 'All fields are required' });
     }
 
@@ -25,14 +53,17 @@ exports.register = [limiter, async (req, res) => {
             [username, name, email, hashedPassword]
         );
 
+        // Log activity
+        await logActivity(result.insertId, ACTION_TYPES.REGISTER, req, { username, email });
+
         res.status(201).json({ message: 'User registered', id: result.insertId });
     } catch (err) {
-        console.error('Error:', err);  // Menampilkan error di konsol
+        console.error('Error:', err);
         res.status(500).json({ error: 'Something went wrong' });
     }
 }];
 
-// Login (Sign In) dengan rate limiting
+// Login
 exports.login = [limiter, async (req, res) => {
     const { username, password } = req.body;
 
@@ -41,7 +72,7 @@ exports.login = [limiter, async (req, res) => {
     }
 
     try {
-        const [results] = await db.query('SELECT * FROM users WHERE username = ?', [username]); // Ganti 'user' jadi 'users'
+        const [results] = await db.query('SELECT * FROM users WHERE username = ?', [username]);
 
         if (results.length === 0) {
             return res.status(401).json({ message: 'User not found' });
@@ -50,6 +81,8 @@ exports.login = [limiter, async (req, res) => {
         const user = results[0];
         const match = await bcrypt.compare(password, user.password);
         if (!match) {
+            // Log failed login
+            await logActivity(user.id, ACTION_TYPES.FAILED_LOGIN, req, { reason: 'Invalid password' });
             return res.status(401).json({ message: 'Invalid password' });
         }
 
@@ -59,9 +92,12 @@ exports.login = [limiter, async (req, res) => {
             { expiresIn: '1h' }
         );
 
+        // Log successful login
+        await logActivity(user.id, ACTION_TYPES.LOGIN, req, { username });
+
         res.status(200).json({ message: 'Login successful', token });
     } catch (err) {
-        console.error('Error:', err);  // Menampilkan error di konsol
+        console.error('Error:', err);
         res.status(500).json({ error: 'Something went wrong' });
     }
 }];
