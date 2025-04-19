@@ -73,3 +73,6 @@ exports.deleteUser = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
+
+//berarti buat redis, ambil semua nama project di projectController, intinya ada delete_project
+// bikin query, ada nama peroject apa aja, terus dimasukkin ke redis, karena banyak nama di loop. 
