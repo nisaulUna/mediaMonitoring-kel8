@@ -16,6 +16,8 @@ const redisRoute = require('./routes/redisRoute');
 const userRoute = require("./routes/userRoute");
 const reportRoute = require("./routes/reportRoute");
 const logRoutes = require('./routes/logRoute')
+const backupRoute = require("./routes/backupRoute");
+const remainder = require("./routes/remainderRoute");
 
 app.use('/auth', authRoutes);
 app.use("/search", projectRoute) 
@@ -24,6 +26,8 @@ app.use("/cache", redisRoute)
 app.use("/users", userRoute)
 app.use("/reports", reportRoute)
 app.use('/logs', logRoutes)
+app.use("/backups", backupRoute)
+app.use("/reminders", remainder)
 
 // Server
 app.listen(PORT, () => {
