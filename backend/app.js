@@ -13,6 +13,8 @@ const sentimentRoute = require('./routes/sentimentRoute');
 const redisRoute = require('./routes/redisRoute');
 const userRoute = require("./routes/userRoute");
 const reportRoute = require("./routes/reportRoute");
+const backupRoute = require("./routes/backupRoute");
+const reminderRoute = require("./routes/reminderRoute");
 
 
 app.use('/auth', authRoutes);
@@ -20,7 +22,9 @@ app.use("/search", projectRoute)
 app.use("/sentiment", sentimentRoute) 
 app.use("/cache", redisRoute) 
 app.use("/users", userRoute)
-app.use("/reports", reportRoute)
+app.use("/users", reportRoute)
+app.use("/backups", backupRoute)
+app.use("/reminders", reminderRoute)
 
 
 // Server
