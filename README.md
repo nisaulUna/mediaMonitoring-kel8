@@ -23,7 +23,7 @@ Cukup dengan memasukkan satu **keyword**, sistem secara otomatis akan menampilka
 
 ---
 
-## ⚙️ Service Workers
+## ⚙️ Workers
 
 1. **mentionFetchWorker** – Mengambil keyword dari redis lalu mengambil data dari API eksternal setiap 5 menit.  
 2. **backupWorker** – Melakukan backup offline otomatis seluruh data ke file JSON.  
