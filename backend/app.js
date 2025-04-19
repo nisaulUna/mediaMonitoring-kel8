@@ -19,8 +19,8 @@ app.use('/auth', authRoutes);
 app.use("/search", projectRoute) 
 app.use("/sentiment", sentimentRoute) 
 app.use("/cache", redisRoute) 
-app.use("/api/users", userRoute)
-app.use("/api/reports", reportRoute)
+app.use("/users", userRoute)
+app.use("/reports", reportRoute)
 
 
 // Server

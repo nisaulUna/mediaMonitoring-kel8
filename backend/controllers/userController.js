@@ -13,9 +13,9 @@ exports.getUsers = async (req, res) => {
 
 // Get user by ID
 exports.getUserById = async (req, res) => {
-  const { id } = req.params;
+  const userId = req.user.id
   try {
-    const [results] = await db.query('SELECT id, username, name, email FROM users WHERE id = ?', [id]);
+    const [results] = await db.query('SELECT id, username, name, email FROM users WHERE id = ?', [userId]);
     if (results.length === 0) return res.status(404).json({ message: 'User not found' });
     res.status(200).json(results[0]);
   } catch (err) {
@@ -23,28 +23,9 @@ exports.getUserById = async (req, res) => {
   }
 };
 
-// Create new user
-exports.createUser = async (req, res) => {
-  const { username, name, email, password } = req.body;
-  if (!username || !email || !password || !name) {
-    return res.status(400).json({ message: 'All fields are required' });
-  }
-
-  try {
-    const hashedPassword = await bcrypt.hash(password, 10);
-    const [result] = await db.query(
-      'INSERT INTO users (username, name, email, password) VALUES (?, ?, ?, ?)',
-      [username, name, email, hashedPassword]
-    );
-    res.status(201).json({ message: 'User created', id: result.insertId });
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-};
-
 // Update user
 exports.updateUser = async (req, res) => {
-  const { id } = req.params;
+  const userId = req.user.id
   const { username, name, email, password } = req.body;
 
   if (!username || !email || !password || !name) {
@@ -55,7 +36,7 @@ exports.updateUser = async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, 10);
     await db.query(
       'UPDATE users SET username = ?, name = ?, email = ?, password = ? WHERE id = ?',
-      [username, name, email, hashedPassword, id]
+      [username, name, email, hashedPassword, userId]
     );
     res.status(200).json({ message: 'User updated' });
   } catch (err) {
@@ -65,9 +46,28 @@ exports.updateUser = async (req, res) => {
 
 // Delete user
 exports.deleteUser = async (req, res) => {
-  const { id } = req.params;
+  const userId = req.user.id
   try {
-    await db.query('DELETE FROM users WHERE id = ?', [id]);
+
+    const [projects] = await db.query(
+      'SELECT project_name FROM projects WHERE id_user = ? AND is_active = 1',
+      [userId]
+    )
+
+    await db.query(
+      'UPDATE projects SET is_active = 0, deletedAt = NOW() WHERE id_user = ?',
+      [userId]
+    )
+
+    for (const project of projects) {
+      const project_name = project.project_name
+      await redis.set(
+        `delete_project:${project_name}:${userId}`,
+        JSON.stringify({ project_name, userId: userId })
+      )
+    }
+
+    await db.query('DELETE FROM users WHERE id = ?', [userId]);
     res.status(200).json({ message: 'User deleted' });
   } catch (err) {
     res.status(500).json({ error: err.message });

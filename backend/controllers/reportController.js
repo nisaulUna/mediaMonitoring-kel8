@@ -2,13 +2,20 @@ const { db } = require('../config');
 
 // Get all reports
 exports.getReports = async (req, res) => {
+  const user = req.user.name
+
   try {
-    const [results] = await db.query('SELECT * FROM reports');
-    res.status(200).json(results);
+    const [results] = await db.query(
+      'SELECT * FROM reports WHERE created_by = ?',
+      [user]
+    )
+
+    res.status(200).json(results)
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    console.error('Gagal mengambil laporan:', err)
+    res.status(500).json({ error: err.message })
   }
-};
+}
 
 // Create report
 exports.createReport = async (req, res) => {
@@ -40,7 +47,7 @@ exports.createReport = async (req, res) => {
 
 // Update report
 exports.updateReport = async (req, res) => {
-  const { id } = req.params;
+  const userId = req.user.id
   const { id_project, created_by, report_type, report_parameters, report_data, expiresAt } = req.body;
 
   if (!created_by || !report_type || !report_parameters || !report_data || !expiresAt || isNaN(Date.parse(expiresAt))) {
@@ -54,12 +61,12 @@ exports.updateReport = async (req, res) => {
     if (id_project) {
       await db.query(
         'UPDATE reports SET id_project = ?, created_by = ?, report_type = ?, report_parameters = ?, report_data = ?, expiresAt = ? WHERE id = ?',
-        [id_project, created_by, report_type, report_parameters, report_data, expiresAtFormatted, id]
+        [id_project, created_by, report_type, report_parameters, report_data, expiresAtFormatted, userId]
       );
     } else {
       await db.query(
         'UPDATE reports SET created_by = ?, report_type = ?, report_parameters = ?, report_data = ?, expiresAt = ? WHERE id = ?',
-        [created_by, report_type, report_parameters, report_data, expiresAtFormatted, id]
+        [created_by, report_type, report_parameters, report_data, expiresAtFormatted, userId]
       );
     }
 
@@ -71,9 +78,9 @@ exports.updateReport = async (req, res) => {
 
 // Delete report
 exports.deleteReport = async (req, res) => {
-  const { id } = req.params;
+  const userId = req.user.id
   try {
-    await db.query('DELETE FROM reports WHERE id = ?', [id]);
+    await db.query('DELETE FROM reports WHERE id = ?', [userId]);
     res.status(200).json({ message: 'Report deleted' });
   } catch (err) {
     res.status(500).json({ error: err.message });
