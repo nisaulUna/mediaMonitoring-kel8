@@ -25,9 +25,9 @@ Cukup dengan memasukkan satu **keyword**, sistem secara otomatis akan menampilka
 
 ## ⚙️ Service Workers
 
-1. **mentionFetchWorker** – Mengambil data dari API eksternal setiap 5 menit.  
-2. **backupWorker** – Melakukan backup otomatis seluruh data ke file JSON.  
-3. **deleteProjectWorker** – Menghapus project tidak aktif setelah 7 hari, dengan reminder H-1 sebelum penghapusan permanen.
+1. **mentionFetchWorker** – Mengambil keyword dari redis lalu mengambil data dari API eksternal setiap 5 menit.  
+2. **backupWorker** – Melakukan backup offline otomatis seluruh data ke file JSON.  
+3. **deleteProjectWorker** – Menghapus project tidak aktif setelah 7 hari, dengan notifikasi reminder H-1 sebelum penghapusan permanen.
 
 ---
 
