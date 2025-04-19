@@ -24,7 +24,6 @@ app.use("/cache", redisRoute)
 app.use("/users", userRoute)
 app.use("/reports", reportRoute)
 
-
 // Server
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`)
