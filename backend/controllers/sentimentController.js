@@ -77,3 +77,55 @@ const indoLexicon = {
       res.status(500).json({ message: "Gagal menganalisis sentimen", error: err.message })
     }
   }
+
+  // Mengambil jumlah sentimen positif
+  exports.getPositiveSentimentSummary = async (req, res) => {
+    try {
+      const [rows] = await db.query(`
+        SELECT COUNT(*) AS count
+        FROM sentiment_analysis
+        WHERE sentiment_category = 'positive'
+      `)
+  
+      const count = rows[0].count
+      res.json({ positive: count })
+    } catch (err) {
+      console.error(err)
+      res.status(500).json({ message: "Gagal mengambil jumlah sentimen positif", error: err.message })
+    }
+  }
+  
+  // Mengambil Jumlah Sentimen Negatif
+  exports.getNegativeSentimentSummary = async (req, res) => {
+    try {
+      const [rows] = await db.query(`
+        SELECT COUNT(*) AS count
+        FROM sentiment_analysis
+        WHERE sentiment_category = 'negative'
+      `)
+  
+      const count = rows[0].count
+      res.json({ negative: count })
+    } catch (err) {
+      console.error(err)
+      res.status(500).json({ message: "Gagal mengambil jumlah sentimen negatif", error: err.message })
+    }
+  }
+
+  // Mengambil Jumlah sentimen netral
+  exports.getNeutralSentimentSummary = async (req, res) => {
+    try {
+      const [rows] = await db.query(`
+        SELECT COUNT(*) AS count
+        FROM sentiment_analysis
+        WHERE sentiment_category = 'neutral'
+      `)
+  
+      const count = rows[0].count
+      res.json({ neutral: count })
+    } catch (err) {
+      console.error(err)
+      res.status(500).json({ message: "Gagal mengambil jumlah sentimen netral", error: err.message })
+    }
+  }
+  
