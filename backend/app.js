@@ -18,13 +18,12 @@ const reportRoute = require("./routes/reportRoute");
 const backupRoute = require("./routes/backupRoute");
 const remainder = require("./routes/remainderRoute");
 
-
 app.use('/auth', authRoutes);
 app.use("/search", projectRoute) 
 app.use("/sentiment", sentimentRoute) 
 app.use("/cache", redisRoute) 
 app.use("/users", userRoute)
-app.use("/users", reportRoute)
+app.use("/reports", reportRoute)
 app.use("/backups", backupRoute)
 app.use("/reminders", remainder)
 
