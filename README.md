@@ -1,4 +1,4 @@
-# 👥 Kelompok 8
+# 👥 Kelas A - Kelompok 8 
 
 | No | Nama Lengkap                             | NIM         |
 |----|------------------------------------------|-------------|
@@ -37,7 +37,9 @@ Cukup dengan memasukkan satu **keyword**, sistem secara otomatis akan menampilka
 - ✅ **Hashed Password** – Password terenkripsi menggunakan bcrypt.  
 - ✅ **SQL Injection Safe** – Aman dari SQL Injection dengan prepared statements.  
 - ✅ **Rate Limiting** – Membatasi jumlah request login & register.  
-- ✅ **Activity Logging** – Mencatat semua aktivitas penting secara otomatis.
+- ✅ **Activity Logging** – Mencatat semua aktivitas penting secara otomatis.  
+- ✅ **Reset Password via Email** – Link reset dikirim melalui email, membutuhkan data di tabel `email_settings`.  
+- ✅ **Token Expiry Check** – Token reset password berlaku selama 1 jam.
 
 ---
 ## DAFTAR ENPOINT API
