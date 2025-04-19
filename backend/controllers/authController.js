@@ -2,6 +2,7 @@ const rateLimit = require('express-rate-limit');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const { db } = require('../config');
+const { logActivity, ACTION_TYPES } = require('../activityLogger');
 
 // Rate limiter
 const limiter = rateLimit({
@@ -9,34 +10,6 @@ const limiter = rateLimit({
     max: 20, // maksimal 20 permintaan per IP
     message: 'Too many requests, please try again later.'
 });
-
-// Konstanta action type
-const ACTION_TYPES = {
-    LOGIN: 'login',
-    LOGOUT: 'logout',
-    REGISTER: 'register',
-    UPDATE_PROFILE: 'update_profile',
-    DELETE_ACCOUNT: 'delete_account',
-    FAILED_LOGIN: 'failed_login'
-};
-
-// Helper log activity
-async function logActivity(userId, actionType, req, extraData = {}) {
-    try {
-        const actionDetails = JSON.stringify({
-            ip: req.ip,
-            userAgent: req.headers['user-agent'],
-            ...extraData
-        });
-
-        await db.query(
-            'INSERT INTO log_activities (id_user, action_type, action_details) VALUES (?, ?, ?)',
-            [userId, actionType, actionDetails]
-        );
-    } catch (err) {
-        console.error('Failed to log activity:', err);
-    }
-}
 
 // Register
 exports.register = [limiter, async (req, res) => {
@@ -101,3 +74,40 @@ exports.login = [limiter, async (req, res) => {
         res.status(500).json({ error: 'Something went wrong' });
     }
 }];
+
+// Logout
+exports.logout = async (req, res) => {
+    try {
+      console.log('DEBUG req.user:', req.user);
+  
+      const userId = req.user?.id;
+      const username = req.user?.username;
+  
+      if (!userId || !username) {
+        return res.status(400).json({ message: 'Invalid or missing user data in token.' });
+      }
+  
+      if (req.cookies?.refreshToken) {
+        res.clearCookie('refreshToken');
+      }
+  
+      // Log logout activity
+      const ipAddress = req.ip || req.connection.remoteAddress;
+      await logActivity(userId, ACTION_TYPES.LOGOUT, req, {
+        username,
+        ip: ipAddress,
+      });
+  
+      return res.status(200).json({
+        message: 'Logout successful',
+        details: 'Your session and token have been invalidated. Please log in again.',
+      });
+  
+    } catch (err) {
+      console.error('Error during logout:', err);
+      return res.status(500).json({
+        message: 'Something went wrong during logout.',
+        error: err.message,
+      });
+    }
+  };
