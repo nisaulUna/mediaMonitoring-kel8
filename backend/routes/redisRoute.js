@@ -5,7 +5,7 @@ const auth = require("../../middlewares/authMiddleware")
 
 router.post("/create", auth, redisController.createProject)
 router.delete("/delete", auth, redisController.softDeleteProject)
-router.delete("/restore", auth, redisController.restoreProject)
+router.patch("/restore", auth, redisController.restoreProject)
 router.get('/recent-deleted', redisController.getRecentlyDeletedProjects)
 router.get('/top-searches', redisController.getTodayHotSearches)
 router.get('/dashboard-summary', redisController.getRedisDashboard)

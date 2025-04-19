@@ -18,18 +18,14 @@ exports.createProject = async (req, res) => {
   try {
     // Throttling
     const currentCount = await redis.incr(throttleKey)
+    if (currentCount === 1) await redis.expire(throttleKey, 86400)
+    if (currentCount > 3) return res.status(429).json({ error: "Maksimal 3 project per hari per user" })
 
-    if (currentCount === 1) {
-      await redis.expire(throttleKey, 86400) // TTL 1 hari = 86400 detik
-    }
-
-    if (currentCount > 3) {
-      return res.status(429).json({ error: "Maksimal 3 project per hari per user" })
-    }
-
-    const [projectRows] = await db.query(
-      "SELECT id FROM projects WHERE project_name = ? AND is_active = 1", [project]
-    )
+      const [projectRows] = await db.query(
+        "SELECT id FROM projects WHERE project_name = ? AND id_user = ? AND is_active = 1",
+        [project, userId]
+      )
+      
     if (projectRows.length) {
       return res.status(400).json({ error: "Nama project sudah dipakai" })
     }
@@ -83,8 +79,8 @@ exports.softDeleteProject = async (req, res) => {
         [project_name, userId]
       )
   
-      // Masukkan ke Redis dengan TTL 5 hari (432000 detik)
-      await redis.setex(`delete_queue:${project_name}:${userId}`, 432000, JSON.stringify({ project_name, userId }))
+      // Masukkan ke Redisdetik)
+      await redis.set(`delete_project:${project_name}:${userId}`, JSON.stringify({ project_name, userId }))
   
       res.json({ message: `Project '${project_name}' berhasil dinonaktifkan dan masuk antrian penghapusan.` })
     } catch (err) {
@@ -112,7 +108,7 @@ exports.softDeleteProject = async (req, res) => {
       )
   
       // Hapus dari Redis jika sempat masuk
-      const redisKeyPattern = `delete_queue:${project_name}:${userId}`
+      const redisKeyPattern = `delete_project:${project_name}:${userId}`
       await redis.del(redisKeyPattern)
   
       res.json({ message: `Project '${project_name}' berhasil di-restore.` })
@@ -125,7 +121,7 @@ exports.softDeleteProject = async (req, res) => {
   // recent-deleted
   exports.getRecentlyDeletedProjects = async (req, res) => {
   try {
-    const keys = await redis.keys("delete_queue:*")
+    const keys = await redis.keys("delete_project:*")
     const data = await Promise.all(keys.map(async (key) => {
       const value = await redis.get(key)
       return JSON.parse(value)
@@ -151,7 +147,7 @@ exports.getTodayHotSearches = async (req, res) => {
 exports.getRedisDashboard = async (req, res) => {
   try {
     const keywordTotal = await redis.scard("keywordSet")
-    const deleteKeys = await redis.keys("delete_queue:*")
+    const deleteKeys = await redis.keys("delete_project:*")
     res.json({
       total_keywords: keywordTotal,
       total_deleted_projects_waiting: deleteKeys.length
@@ -176,7 +172,7 @@ exports.getUserActivity = async (req, res) => {
 exports.getCacheStats = async (req, res) => {
   try {
     const totalKeywords = await redis.scard("keywordSet")
-    const deletedProjects = (await redis.keys("delete_queue:*")).length
+    const deletedProjects = (await redis.keys("delete_project:*")).length
     const alertKeywords = await redis.scard("alert_keywords")
 
     res.json({
