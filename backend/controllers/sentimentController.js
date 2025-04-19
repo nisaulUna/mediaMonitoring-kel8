@@ -1,4 +1,4 @@
-const db = require("../config")
+const { db } = require('../config');
 const Sentiment = require("sentiment")
 const sentiment = new Sentiment()
 const franc = require('franc')
@@ -71,7 +71,7 @@ const indoLexicon = {
         }
       }
   
-      res.json({ message: "Analisis sentimen selesai diproses. Kalimat yang mengandung simbol atau emoji diabaikan." })
+      res.json({ message: "Analisis sentimen selesai diproses." })
     } catch (err) {
       console.error(err)
       res.status(500).json({ message: "Gagal menganalisis sentimen", error: err.message })
