@@ -79,7 +79,7 @@ exports.softDeleteProject = async (req, res) => {
         [project_name, userId]
       )
   
-      // Masukkan ke Redisdetik)
+      // Masukkan ke Redis
       await redis.set(`delete_project:${project_name}:${userId}`, JSON.stringify({ project_name, userId }))
   
       res.json({ message: `Project '${project_name}' berhasil dinonaktifkan dan masuk antrian penghapusan.` })
