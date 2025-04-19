@@ -16,7 +16,7 @@ const redisRoute = require('./routes/redisRoute');
 const userRoute = require("./routes/userRoute");
 const reportRoute = require("./routes/reportRoute");
 const backupRoute = require("./routes/backupRoute");
-const reminderRoute = require("./routes/reminderRoute");
+const remainder = require("./routes/remainderRoute");
 
 
 app.use('/auth', authRoutes);
@@ -26,7 +26,7 @@ app.use("/cache", redisRoute)
 app.use("/users", userRoute)
 app.use("/users", reportRoute)
 app.use("/backups", backupRoute)
-app.use("/reminders", reminderRoute)
+app.use("/reminders", remainder)
 
 // Server
 app.listen(PORT, () => {

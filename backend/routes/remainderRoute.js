@@ -1,8 +1,8 @@
 const express = require("express")
 const router = express.Router()
-const projectController = require("../controllers/projectController")
+const remainderContoller = require("../controllers/remainderContoller")
 const auth = require("../../middlewares/authMiddleware")
 
-router.get("/", auth, projectController.getProjectDeleteReminders)
+router.get("/", auth, remainderContoller.getProjectDeleteReminders)
 
 module.exports = router
