@@ -121,8 +121,6 @@ Cukup dengan memasukkan satu **keyword**, sistem secara otomatis akan menampilka
 
 ## 📌 Note Penggunaan Frontend & Autentikasi Sementara
 
-Karena halaman **Login** dan **Signup** belum tersedia, sementara backend sudah menggunakan autentikasi berbasis JWT, maka diperlukan penyesuaian sementara agar fitur tetap dapat diuji dari sisi frontend.
-
 - Sementara menggunakan ID user `2` apabila tidak tersedia token autentikasi:
 
   ```js
