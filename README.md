@@ -115,3 +115,44 @@ Cukup dengan memasukkan satu **keyword**, sistem secara otomatis akan menampilka
 | 10 | POST   | `/logs/email-logs`                       | Menyimpan log pengiriman email ke Redis                                  |
 | 11 | POST   | `/logs/export-logs`                      | Menyimpan log proses ekspor file ke Redis                                |
 | 12 | POST   | `/logs/activity-logs`                    | Menyimpan log aktivitas user (selain login) ke Redis                     |
+
+
+---
+
+## 📌 Note Penggunaan Frontend & Autentikasi Sementara
+
+Karena halaman **Login** dan **Signup** belum tersedia, sementara backend sudah menggunakan autentikasi berbasis JWT, maka diperlukan penyesuaian sementara agar fitur tetap dapat diuji dari sisi frontend.
+
+- Sementara menggunakan ID user `2` apabila tidak tersedia token autentikasi:
+
+  ```js
+  const userId = req.user?.id || 2
+  ```
+
+-  Beberapa rute yang awalnya dilindungi dengan middleware `auth`, untuk sementara **dihilangkan middleware-nya** agar dapat diakses tanpa login. Contoh perubahan:
+
+  ```diff
+  - router.post("/create", auth, redisController.createProject)
+  + router.post("/create", redisController.createProject)
+  ```
+
+## Fitur Filter di Main Page
+
+| Filter         | Keterangan                                                                                   |
+|------------------|--------------------------------------------------------------------------------------------------|
+| **Platform / Source** | Memfilter berdasarkan sumber media, seperti: `Twitter`, `YouTube`, dan `Google News`. |
+| **Tanggal**       | Memfilter berdasarkan tanggal `tahun`, `bulan`, dan `hari`. *Khusus untuk Google News tidak menyertakan filter tanggal karena keterbatasan data dari API*. |
+| **Bahasa**        | Memfilter hasil berdasarkan bahasa konten mention: `Indonesia`, `Inggris`, atau `Other`. |
+| **Sentimen**      | Menyaring konten berdasarkan analisis sentimen (**positif**, **negatif**, **netral**) – khusus diterapkan hanya untuk mention berbahasa Indonesia dan Inggris. |
+
+---
+
+## ⚙️ Menjalankan Worker
+
+| Nama File                | Nama Worker     | Perintah PM2                                                |
+|----------------------------|--------------------|----------------------------------------------------------------|
+| `mentionFetchWorker.js`    | `worker-mention`   | `pm2 start npm --name worker-mention -- run worker:mention`   |
+| `deleteProjectWorker.js`   | `worker-delete`    | `pm2 start npm --name worker-delete -- run worker:delete`     |
+| `backupSyncWorker.js`      | `worker-backup`    | `pm2 start npm --name worker-backup -- run worker:backup`     |
+
+> Derdapat dalam `package.json` di bagian `scripts`.
