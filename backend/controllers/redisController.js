@@ -4,7 +4,7 @@ const moment = require('moment')
 // Membuat project
 exports.createProject = async (req, res) => {
   let { project, keyword } = req.body
-  const userId = req.user.id
+  const userId = req.user?.id || 2
 
   keyword = keyword.toLowerCase()
 
@@ -60,7 +60,7 @@ exports.createProject = async (req, res) => {
 // Hapus Project
 exports.softDeleteProject = async (req, res) => {
     const { project_name } = req.query
-    const userId = req.user.id
+    const userId = req.user?.id || 2
   
     if (!project_name) return res.status(400).json({ error: "project_name harus diisi" })
   
@@ -92,7 +92,7 @@ exports.softDeleteProject = async (req, res) => {
   // Restore Project
   exports.restoreProject = async (req, res) => {
     const { project_name } = req.query
-    const userId = req.user.id
+    const userId = req.user?.id || 2
   
     try {
       const [check] = await db.query(

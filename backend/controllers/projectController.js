@@ -3,7 +3,7 @@ const { db, redis } = require("../config")
 // // Menampilkan Detal Project
 exports.getProjectDetail = async (req, res) => {
   const { project_name } = req.query
-  const userId = req.user.id
+  const userId = req.user?.id || 2
 
   try {
     if (project_name) {
@@ -39,8 +39,8 @@ exports.getProjectDetail = async (req, res) => {
 
 // Menampilkan Project detail besrta filter
 exports.getMentions = async (req, res) => {
-  const { project_name, source, year, month, day, language, sentiment } = req.query
-  const userId = req.user.id
+  const { project_name, source, year, month, day, language, sentiment, search } = req.query
+  const userId = req.user?.id || 2
 
   if (!project_name) return res.status(400).json({ error: "project_name harus diisi" })
 
@@ -92,36 +92,77 @@ exports.getMentions = async (req, res) => {
       }
     }
 
-    query += ` ORDER BY mm.published_date DESC`
+    if (search) {
+      query += ` AND mm.content LIKE ?`
+      params.push(`%${search}%`)
+    }
 
+    query += ` ORDER BY mm.published_date DESC`
+    console.log("QUERY:", query)
+    console.log("PARAMS:", params)
+    
     const [rows] = await db.query(query, params)
     res.json({ data: rows })
-
   } catch (err) {
     console.error("Gagal ambil media mentions:", err)
     res.status(500).json({ error: "Terjadi kesalahan" })
   }
 }
 
-
 // Jumlah Mention per Platform
 exports.getPlatformSummary = async (req, res) => {
-  const { project_name } = req.query
-  const userId = req.user.id
+  const { project_name, source, year, month, day, language, sentiment, search } = req.query
+  const userId = req.user?.id || 2
 
   if (!project_name) return res.status(400).json({ error: "project_name harus diisi" })
 
   try {
-    const [rows] = await db.query(`
+    let query = `
       SELECT ms.source_name, COUNT(*) AS total_mentions
       FROM projects p
       JOIN keywords k ON p.id_keyword = k.id
       JOIN media_mentions mm ON mm.id_keyword = k.id
       JOIN media_sources ms ON mm.id_mediaSource = ms.id
+      LEFT JOIN sentiment_analysis sa ON sa.id_mentions = mm.id
       WHERE p.project_name = ? AND p.id_user = ? AND p.is_active = 1
-      GROUP BY ms.source_name
-    `, [project_name, userId])
+    `
+    const params = [project_name, userId]
 
+    if (source) {
+      const sources = Array.isArray(source) ? source : [source]
+      query += ` AND ms.source_name IN (${sources.map(() => '?').join(',')})`
+      params.push(...sources)
+    }
+
+    if (year || month || day) {
+      query += ` AND ms.source_name != 'google'`
+      if (year) { query += ` AND YEAR(mm.published_date) = ?`; params.push(year) }
+      if (month) { query += ` AND MONTH(mm.published_date) = ?`; params.push(month) }
+      if (day) { query += ` AND DAY(mm.published_date) = ?`; params.push(day) }
+    }
+
+    if (language) {
+      query += ` AND sa.language = ?`
+      params.push(language)
+
+      if (language === 'id' || language === 'en') {
+        if (sentiment) {
+          query += ` AND sa.sentiment_category = ?`
+          params.push(sentiment)
+        }
+      } else {
+        query += ` AND sa.sentiment_category IS NULL`
+      }
+    }
+
+    if (search) {
+      query += ` AND mm.content LIKE ?`
+      params.push(`%${search}%`)
+    }
+
+    query += ` GROUP BY ms.source_name`
+
+    const [rows] = await db.query(query, params)
     res.json({ data: rows })
   } catch (err) {
     console.error("Gagal ambil platform summary:", err)
@@ -129,11 +170,10 @@ exports.getPlatformSummary = async (req, res) => {
   }
 }
 
-
 // Jumlah Mention per Bahasa
 exports.getLanguageSummary = async (req, res) => {
   const { project_name } = req.query
-  const userId = req.user.id
+  const userId = req.user?.id || 2
 
   if (!project_name) return res.status(400).json({ error: "project_name harus diisi" })
 
@@ -158,7 +198,7 @@ exports.getLanguageSummary = async (req, res) => {
 // Jumlah Mention per Sentimen
 exports.getSentimentSummary = async (req, res) => {
   const { project_name } = req.query
-  const userId = req.user.id
+  const userId = req.user?.id || 2
 
   if (!project_name) return res.status(400).json({ error: "project_name harus diisi" })
 

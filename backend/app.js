@@ -1,8 +1,12 @@
 require("dotenv").config()
 const express = require("express")
 const app = express()
-const PORT = 3000
+const cors = require("cors")
+app.use(cors())
 const cookieParser = require('cookie-parser');
+
+const PORT = 3000
+
 
 // Middleware
 app.use(express.json())
