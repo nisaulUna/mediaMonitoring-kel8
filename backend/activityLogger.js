@@ -6,8 +6,7 @@ const ACTION_TYPES = {
     LOGIN: 'login',
     LOGOUT: 'logout',
     REGISTER: 'register',
-    UPDATE_PROFILE: 'update_profile',
-    DELETE_ACCOUNT: 'delete_account',
+    UPDATE_PROFIL: 'update_profil',
     FAILED_LOGIN: 'failed_login'
 };
 

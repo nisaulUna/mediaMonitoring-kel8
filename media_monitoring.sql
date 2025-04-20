@@ -470,13 +470,44 @@ ALTER TABLE `reports`
 --
 ALTER TABLE `sentiment_analysis`
   ADD CONSTRAINT `sentiment_analysis_ibfk_1` FOREIGN KEY (`id_mentions`) REFERENCES `media_mentions` (`id`);
-COMMIT;
 
 ALTER TABLE projects
 ADD COLUMN deletedAt DATETIME NULL;
 
 ALTER TABLE log_activities
 MODIFY COLUMN action_type ENUM('login', 'logout', 'register', 'update_profile', 'delete_account', 'failed_login') DEFAULT NULL;
+
+
+-- Struktur dari tabel `email_settings`
+--
+
+CREATE TABLE `email_settings` (
+  `id` int(11) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `purpose` enum('RESET_PASSWORD','NOTIFICATION','WELCOME_EMAIL') NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indeks untuk tabel `email_settings`
+--
+ALTER TABLE `email_settings`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT untuk tabel yang dibuang
+--
+
+--
+-- AUTO_INCREMENT untuk tabel `email_settings`
+--
+ALTER TABLE `email_settings`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

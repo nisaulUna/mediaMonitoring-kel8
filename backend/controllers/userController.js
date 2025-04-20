@@ -26,7 +26,7 @@ exports.getUserById = async (req, res) => {
 
 // Update user
 exports.updateUser = async (req, res) => {
-  const userId = req.user.id
+  const userId = req.user.id;
   const { username, name, email, password } = req.body;
 
   if (!username || !email || !password || !name) {
@@ -35,10 +35,21 @@ exports.updateUser = async (req, res) => {
 
   try {
     const hashedPassword = await bcrypt.hash(password, 10);
+
     await db.query(
       'UPDATE users SET username = ?, name = ?, email = ?, password = ? WHERE id = ?',
       [username, name, email, hashedPassword, userId]
     );
+// Log aktivitas update user
+
+    const ipAddress = req.ip || req.connection.remoteAddress;
+    await logActivity(userId, ACTION_TYPES.UPDATE_PROFIL, req, {
+      username,
+      email,
+      ip: ipAddress,
+      message: 'User profile updated'
+    });
+
     res.status(200).json({ message: 'User updated' });
   } catch (err) {
     res.status(500).json({ error: err.message });
@@ -72,13 +83,6 @@ exports.deleteUser = async (req, res) => {
       );
     }
 
-    // Log aktivitas penghapusan akun
-    const ipAddress = req.ip || req.connection.remoteAddress;
-    await logActivity(userId, ACTION_TYPES.DELETE_ACCOUNT, req, {
-      username,
-      ip: ipAddress,
-    });
-
     // Hapus user dari database
     await db.query('DELETE FROM log_activities WHERE id_user = ?', [userId]);
     await db.query('DELETE FROM users WHERE id = ?', [userId]);
@@ -88,3 +92,28 @@ exports.deleteUser = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
+
+//mengambil semua aktivitas login user
+exports.getLoginLogs = async (req, res) => {
+  try {
+    const userId = req.user?.id;
+    console.log('DEBUG userId:', userId); // Tambahin ini untuk cek user
+
+    if (!userId) {
+      return res.status(401).json({ message: 'Unauthorized' });
+    }
+
+    const [results] = await db.query(
+      'SELECT COUNT(*) AS loginCount FROM log_activities WHERE id_user = ? AND action_type = ?',
+      [userId, ACTION_TYPES.LOGIN]
+    );
+
+    console.log('DEBUG login count query result:', results); // Debug hasil query
+
+    res.json({ loginCount: results[0].loginCount });
+  } catch (err) {
+    console.error('❌ Error fetching login count:', err);
+    res.status(500).json({ message: 'Failed to fetch login count', error: err.message });
+  }
+};
+
