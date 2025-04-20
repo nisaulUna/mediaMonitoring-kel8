@@ -117,8 +117,12 @@ function renderMonitoringResults(data) {
     const profile = item.profile_image || 0
 
     const dateObj = new Date(item.date)
-    const options = { day: "2-digit", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit", hour12: false }
-    const dateFormatted = dateObj.toLocaleString("id-ID", options).replace(".", "").replace(",", " WIB")
+    const jam = dateObj.getHours().toString().padStart(2, '0')
+    const menit = dateObj.getMinutes().toString().padStart(2, '0')
+    const tanggal = dateObj.toLocaleDateString("id-ID", { day: "2-digit", month: "short", year: "numeric" })
+
+    const dateFormatted = `${tanggal} WIB ${jam}.${menit}`
+
 
     let highlightedContent = item.content
     if (keyword) {

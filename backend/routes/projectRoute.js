@@ -3,6 +3,7 @@ const router = express.Router()
 const projectController = require("../controllers/projectController")
 const auth = require("../../middlewares/authMiddleware")
 
+router.get("/", auth, projectController.getProjectDetail)
 router.get("/mentions", auth, projectController.getMentions)
 router.get("/summary/platform", auth, projectController.getPlatformSummary)
 router.get("/summary/language", auth, projectController.getLanguageSummary)
