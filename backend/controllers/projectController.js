@@ -98,8 +98,6 @@ exports.getMentions = async (req, res) => {
     }
 
     query += ` ORDER BY mm.published_date DESC`
-    console.log("QUERY:", query)
-    console.log("PARAMS:", params)
     
     const [rows] = await db.query(query, params)
     res.json({ data: rows })
